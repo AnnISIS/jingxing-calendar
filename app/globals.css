@@ -134,6 +134,40 @@ button { color:inherit; }
   .memorial-date { left:0; }
 }
 
+/* 月历页 */
+.calendar-site { background:#f6f1e5; }
+.calendar-hero { position:relative; height:230px; overflow:hidden; padding:28px 25px 0; background:linear-gradient(150deg,#f3edde,#dedfcf); }
+.calendar-year { position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between; color:#7e735f; }
+.calendar-year span { padding:5px 7px; border:1px solid rgba(135,77,62,.5); color:#874d43; font-size:8px; letter-spacing:.16em; }
+.calendar-year p { margin:0; font-size:9px; letter-spacing:.2em; }
+.month-switch { position:relative; z-index:3; display:grid; grid-template-columns:30px 1fr 30px; align-items:center; margin-top:39px; text-align:center; }
+.month-switch button { border:0; background:transparent; color:#9a8b70; font-size:27px; font-weight:300; }
+.month-switch div { display:flex; flex-direction:column; align-items:center; }
+.month-switch strong { color:#413d34; font-size:38px; line-height:1.2; font-weight:500; letter-spacing:.18em; text-indent:.18em; }
+.month-switch span { margin-top:9px; color:#827b6d; font-size:9px; letter-spacing:.12em; }
+.month-wash { position:absolute; z-index:1; inset:0; opacity:.24; }
+.month-wash i { position:absolute; bottom:-50px; width:250px; height:145px; border-radius:50% 50% 0 0; background:#839582; transform:rotate(-8deg); }
+.month-wash i:nth-child(1){left:-65px}.month-wash i:nth-child(2){left:115px;bottom:-78px;background:#687d6d;transform:rotate(12deg)}.month-wash i:nth-child(3){right:-90px;bottom:-43px;background:#9da99a;transform:rotate(-12deg)}
+.calendar-sheet { position:relative; z-index:4; margin-top:-16px; padding:26px 17px 45px; border-radius:18px 18px 0 0; background:#faf7ef; }
+.week-row { display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:7px; color:#a19889; text-align:center; font-size:9px; }
+.calendar-grid { display:grid; grid-template-columns:repeat(7,1fr); border-top:1px solid #d8cfbd; border-left:1px solid #e2dacb; }
+.calendar-grid button { position:relative; height:62px; display:flex; flex-direction:column; align-items:center; justify-content:center; border:0; border-right:1px solid #e2dacb; border-bottom:1px solid #e2dacb; background:transparent; color:#4e493f; cursor:pointer; }
+.calendar-grid button strong { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; font-family:"Bodoni 72","Times New Roman",serif; font-size:17px; line-height:1; font-weight:400; }
+.calendar-grid button small { margin-top:3px; color:#9b9386; font-size:7px; }
+.calendar-grid button.outside { color:#c8c1b4; opacity:.47; cursor:default; }
+.calendar-grid button.selected strong { background:#5c6d5d; color:#f8f3e8; }
+.calendar-grid .mark { position:absolute; top:6px; right:7px; width:4px; height:4px; border-radius:50%; background:#ad8b4d; }
+.calendar-grid .mark.dharma { background:#8b4c41; }.calendar-grid .mark.both { width:8px; border-radius:4px; background:linear-gradient(90deg,#ad8b4d 0 50%,#8b4c41 50%); }
+.calendar-legend { display:flex; justify-content:flex-end; gap:15px; padding:11px 2px 0; color:#9b9386; font-size:7px; }
+.calendar-legend span { display:flex; align-items:center; gap:5px; }.calendar-legend i { width:5px; height:5px; border-radius:50%; background:#ad8b4d; }.calendar-legend i.dharma { background:#8b4c41; }
+.selected-day { display:grid; grid-template-columns:60px 1fr 14px; align-items:center; min-height:84px; margin:28px 2px 0; padding:12px 2px; border-top:1px solid #c9bb9f; border-bottom:1px solid #dfd6c4; }
+.selected-day time { height:57px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-right:1px solid #d5c8ae; color:#657363; }.selected-day time strong { font-family:"Bodoni 72","Times New Roman",serif;font-size:27px;line-height:1;font-weight:400}.selected-day time span{margin-top:6px;font-size:8px}
+.selected-day > div { padding-left:17px; }.selected-day p { margin:0 0 8px; font-size:14px; letter-spacing:.06em; }.selected-day div span { color:#91897c; font-size:8px; }.selected-day > b { color:#a89775; font-size:20px; font-weight:400; }
+.selected-day.has-event time { color:#9a7542; }
+.month-notes { margin:33px 2px 0; }.month-notes header { display:flex; align-items:center; gap:9px; margin-bottom:12px; font-size:13px; letter-spacing:.12em; }.month-notes header i { width:3px;height:14px;background:#8b4c41; }
+.month-notes button { width:100%; min-height:48px; display:grid; grid-template-columns:38px 1fr auto; align-items:center; border:0; border-bottom:1px solid #e1d9ca; background:transparent; color:#565047; text-align:left; cursor:pointer; }.month-notes button time { color:#9c8255; font-family:"Bodoni 72","Times New Roman",serif;font-size:15px}.month-notes button span{font-size:10px;letter-spacing:.04em}.month-notes button b{color:#9b9283;font-size:7px;font-weight:400}
+@media(max-width:370px){.calendar-sheet{padding-left:12px;padding-right:12px}.calendar-grid button{height:58px}.calendar-grid .mark{right:5px}.month-switch strong{font-size:34px}}
+
 /* 第二屏：连续书页，而非卡片堆叠 */
 .editorial-content { margin-top:0; border-radius:0; padding:0 25px 54px; background:#f7f2e7; }
 .sacred-brief { padding:48px 4px 39px; text-align:center; border-bottom:1px solid #d8cdb7; }

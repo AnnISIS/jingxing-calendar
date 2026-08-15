@@ -37,7 +37,7 @@ export function OrdinaryTemplate({ variant }: { variant: Variant }) {
 
       <section className="content-sheet editorial-content ordinary-content">
         <section className="dharma-section">
-          <header><div><i />近期东林法务</div><a href="#calendar">进入日历</a></header>
+          <header><div><i />近期东林法务</div><a href="/calendar">进入日历</a></header>
           <article className="timeline-event">
             <time><strong>27</strong><span>八月</span></time>
             <div><p>盂兰盆会</p><span>庐山东林寺 · 距今十二日</span></div><b>›</b>
@@ -54,8 +54,8 @@ export function OrdinaryTemplate({ variant }: { variant: Variant }) {
       </section>
 
       <nav className="bottom-nav" aria-label="主导航">
-        <a className="active" href="#"><span className="today-dot">●</span><b>今日</b></a>
-        <a href="#calendar"><CalendarIcon /><b>日历</b></a>
+        <a className="active" href="/"><span className="today-dot">●</span><b>今日</b></a>
+        <a href="/calendar"><CalendarIcon /><b>日历</b></a>
       </nav>
     </main>
   );

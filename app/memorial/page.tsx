@@ -20,7 +20,7 @@ export default function Home() {
 
       <section className="content-sheet sacred-sheet editorial-content">
         <section className="dharma-section">
-          <header><div><i />东林法务</div><a href="#calendar">进入日历</a></header>
+          <header><div><i />东林法务</div><a href="/calendar">进入日历</a></header>
           <article className="timeline-event">
             <time><strong>04</strong><span>四月</span></time>
             <div><p>清明祭祖法会</p><span>庐山东林寺 · 查看官方公告</span></div>
@@ -37,8 +37,8 @@ export default function Home() {
       </section>
 
       <nav className="bottom-nav" aria-label="主导航">
-        <a className="active" href="#"><span className="today-dot">●</span><b>今日</b></a>
-        <a href="#calendar"><CalendarIcon /><b>日历</b></a>
+        <a className="active" href="/"><span className="today-dot">●</span><b>今日</b></a>
+        <a href="/calendar"><CalendarIcon /><b>日历</b></a>
       </nav>
     </main>
   );
