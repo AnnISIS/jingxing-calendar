@@ -4,42 +4,33 @@ const CalendarIcon = () => (
 
 export default function Home() {
   return (
-    <main className="site-shell">
-      <section className="today-poster memorial-poster" aria-label="观世音菩萨圣诞佛历海报">
+    <main className="site-shell ordinary-site">
+      <section className="ordinary-poster" aria-label="普通日佛历海报">
+        <img className="amitabha-background" src="/amitabha-companion.jpg" alt="西方三圣行云图" />
+        <div className="ordinary-veil" />
         <div className="paper-grain" />
-        <div className="sacred-frame" aria-label="观世音菩萨圣像">
-          <img src="/guanyin-memorial.jpg" alt="观世音菩萨圣像，程宗元绘" />
+
+        <div className="season-note"><i />立秋 · 三候</div>
+        <div className="companion-seal">常随弥陀</div>
+
+        <div className="ordinary-date">
+          <p>二〇二六年八月</p>
+          <strong>15</strong>
+          <div><span>星期六</span><i /><span>农历七月初三</span></div>
         </div>
-        <div className="image-veil" aria-hidden="true" />
-        <div className="editorial-title">
-          <p>农历二月十九</p>
-          <h1>观世音菩萨圣诞日</h1>
-          <span>2026.04.06　星期一　·　佛历2570年</span>
+
+        <div className="ordinary-footer">
+          <p>佛历二五七〇年</p>
+          <span>暑气渐敛，山色初澄</span>
         </div>
       </section>
 
-      <section className="content-sheet sacred-sheet editorial-content">
-        <article className="sacred-brief">
-          <span className="brief-ornament">◇</span>
-          <h2>南无大悲观世音菩萨</h2>
-          <p>农历二月十九，为观世音菩萨圣诞。<br />谨依传统佛教纪念日资料收录。</p>
-          <div className="brief-actions">
-            <details>
-              <summary>纪念依据 <i>＋</i></summary>
-              <div>传统汉传佛教寺院多以农历二月十九纪念观世音菩萨圣诞；正式资料页将列出交叉核验来源。</div>
-            </details>
-            <details>
-              <summary>历法详情 <i>＋</i></summary>
-              <div>公历2026年4月6日 · 星期一<br />农历丙午年二月十九 · 佛历2570年</div>
-            </details>
-          </div>
-        </article>
-
+      <section className="content-sheet editorial-content ordinary-content">
         <section className="dharma-section">
-          <header><div><i />东林法务</div><a href="#calendar">进入日历</a></header>
+          <header><div><i />近期东林法务</div><a href="#calendar">进入日历</a></header>
           <article className="timeline-event">
-            <time><strong>04</strong><span>四月</span></time>
-            <div><p>清明祭祖法会</p><span>庐山东林寺 · 查看官方公告</span></div>
+            <time><strong>27</strong><span>八月</span></time>
+            <div><p>盂兰盆会</p><span>庐山东林寺 · 距今十二日</span></div>
             <b>›</b>
           </article>
           <p className="event-caveat">法务信息以主办寺院最新公告为准</p>
@@ -47,9 +38,11 @@ export default function Home() {
 
         <div className="next-observance">
           <span>下一重要圣日</span>
-          <p>文殊菩萨圣诞　<span>五月二十日</span></p>
+          <p>大势至菩萨圣诞　<span>八月二十五日</span></p>
           <b>›</b>
         </div>
+
+        <a className="template-link" href="/memorial">查看佛菩萨纪念日母版</a>
       </section>
 
       <nav className="bottom-nav" aria-label="主导航">
