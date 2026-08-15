@@ -18,35 +18,38 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="content-sheet sacred-sheet">
-        <div className="section-heading">
-          <div><p>今日 · 二月十九</p><h2>观音圣诞</h2></div>
-          <span className="quiet-tag sacred-tag">重要圣日</span>
-        </div>
-
-        <article className="memorial-detail-card">
-          <span className="lotus-mark">莲</span>
-          <div><p className="eyebrow">今日纪念</p><h3>观世音菩萨圣诞</h3><p className="description">纪念观世音菩萨大悲愿行的传统佛教节日</p></div>
-          <button aria-label="查看纪念日依据">依据</button>
-        </article>
-
-        <div className="name-card"><span>圣号</span><p>南无大悲观世音菩萨</p><small>点击可查看经典依据</small></div>
-
-        <div className="section-title"><div><span />东林法务</div><button>查看日历</button></div>
-        <article className="notice-card event-card">
-          <div className="date-chip"><b>04</b><span>四月</span></div>
-          <div className="event-copy"><p className="eyebrow">庐山东林寺 · 今日附近</p><h3>清明祭祖法会</h3><p className="description">示意法讯 · 正式上线前核验官方公告</p></div>
-          <span className="review-badge">待核验</span>
-        </article>
-
-        <details className="details-card">
-          <summary><span><b>今日历法详情</b><small>公历 · 农历 · 佛历</small></span><i>＋</i></summary>
-          <div className="details-grid">
-            <p><span>公历</span>2026年4月6日</p><p><span>星期</span>星期一</p>
-            <p><span>农历</span>丙午年二月十九</p><p><span>佛历</span>2570年</p>
+      <section className="content-sheet sacred-sheet editorial-content">
+        <article className="sacred-brief">
+          <span className="brief-ornament">◇</span>
+          <h2>南无大悲观世音菩萨</h2>
+          <p>农历二月十九，为观世音菩萨圣诞。<br />谨依传统佛教纪念日资料收录。</p>
+          <div className="brief-actions">
+            <details>
+              <summary>纪念依据 <i>＋</i></summary>
+              <div>传统汉传佛教寺院多以农历二月十九纪念观世音菩萨圣诞；正式资料页将列出交叉核验来源。</div>
+            </details>
+            <details>
+              <summary>历法详情 <i>＋</i></summary>
+              <div>公历2026年4月6日 · 星期一<br />农历丙午年二月十九 · 佛历2570年</div>
+            </details>
           </div>
-        </details>
-        <p className="source-note">纪念日数据已交叉核验 · 法务以寺院最新公告为准</p>
+        </article>
+
+        <section className="dharma-section">
+          <header><div><i />东林法务</div><a href="#calendar">进入日历</a></header>
+          <article className="timeline-event">
+            <time><strong>04</strong><span>四月</span></time>
+            <div><p>清明祭祖法会</p><span>庐山东林寺 · 查看官方公告</span></div>
+            <b>›</b>
+          </article>
+          <p className="event-caveat">法务信息以主办寺院最新公告为准</p>
+        </section>
+
+        <div className="next-observance">
+          <span>下一重要圣日</span>
+          <p>文殊菩萨圣诞　<span>五月二十日</span></p>
+          <b>›</b>
+        </div>
       </section>
 
       <nav className="bottom-nav" aria-label="主导航">
