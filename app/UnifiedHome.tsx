@@ -1,0 +1,6 @@
+"use client";
+import {useState} from "react";
+import {OrdinaryTemplate} from "./ordinary/OrdinaryTemplate";
+import {CalendarView,lunarDays} from "./calendar/CalendarView";
+const CalendarIcon=()=> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3M18 3v3M4.5 8.5h15M5.5 5h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></svg>;
+export default function UnifiedHome(){const [mode,setMode]=useState<"today"|"calendar">("today");const [day,setDay]=useState(15);const weekdays=["星期六","星期日","星期一","星期二","星期三","星期四","星期五"];const lunar=`${day<=12?"六月":"七月"}${lunarDays[day-1]}`;return <div className="unified-home">{mode==="today"?<OrdinaryTemplate variant="amitabha" embedded day={day} weekday={weekdays[(day-1)%7]} lunarLabel={lunar} onOpenCalendar={()=>setMode("calendar")}/>:<CalendarView embedded selected={day} onSelect={setDay} onViewDay={()=>setMode("today")}/>}<nav className="bottom-nav unified-nav"><button className={mode==="today"?"active":""} onClick={()=>setMode("today")}><span className="today-dot">●</span><b>{day===15?"今日":`${day}日`}</b></button><button className={mode==="calendar"?"active":""} onClick={()=>setMode("calendar")}><CalendarIcon/><b>日历</b></button></nav></div>}

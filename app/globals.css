@@ -70,7 +70,7 @@ button { color:inherit; }
 .details-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:0 3px 18px; }.details-grid p { margin:0; font-size:11px; }.details-grid span { display:block; margin-bottom:3px; color:#9c8f76; font-size:9px; }
 .source-note { margin:22px 0 0; text-align:center; color:#aaa293; font-size:9px; letter-spacing:.08em; }
 .bottom-nav { position:fixed; z-index:20; bottom:0; left:50%; transform:translateX(-50%); width:min(100%,430px); height:66px; display:grid; grid-template-columns:1fr 1fr; background:rgba(247,244,236,.95); border-top:1px solid rgba(194,185,163,.65); backdrop-filter:blur(16px); }
-.bottom-nav a { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; color:#989185; text-decoration:none; font-size:10px; letter-spacing:.15em; }.bottom-nav b { font-weight:400; }.bottom-nav svg { width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.4; }.bottom-nav .active { color:#765f3c; }.today-dot { display:grid; place-items:center; width:19px; height:19px; border:1px solid currentColor; border-radius:50%; font-size:5px; }
+.bottom-nav a,.bottom-nav button { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; border:0; background:transparent; color:#989185; text-decoration:none; font:inherit; font-size:10px; letter-spacing:.15em; cursor:pointer; }.bottom-nav b { font-weight:400; }.bottom-nav svg { width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.4; }.bottom-nav .active { color:#765f3c; }.today-dot { display:grid; place-items:center; width:19px; height:19px; border:1px solid currentColor; border-radius:50%; font-size:5px; }
 @media (min-width:700px){ .site-shell { margin:24px auto; min-height:calc(100vh - 48px); }.bottom-nav{bottom:24px;} }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
@@ -310,3 +310,12 @@ button { color:inherit; }
   .editorial-title { left:24px; right:23px; }
   .editorial-title h1 { font-size:23px; }
 }
+
+/* 今日与月历：同页双视图 */
+.text-button { border:0; padding:0; background:transparent; color:#918671; font-size:9px; letter-spacing:.1em; cursor:pointer; }
+.day-poster-button { border:0; border-left:1px solid #d5c8ae; padding:8px 0 8px 10px; background:transparent; color:#907a55; font-size:8px; line-height:1.5; letter-spacing:.08em; cursor:pointer; }
+.unified-home { width:min(100%,430px); min-height:100vh; margin:0 auto; background:#f7f4ea; box-shadow:0 0 35px rgba(70,65,53,.1); }
+.unified-home .embedded-view { width:100%; margin:0; box-shadow:none; animation:mode-in .3s ease-out; }
+.unified-home .embedded-view .content-sheet,.unified-home .embedded-view .calendar-sheet { padding-bottom:92px; }
+.unified-nav button { width:100%; }
+@keyframes mode-in { from{opacity:.55;transform:translateY(4px)} to{opacity:1;transform:none} }
