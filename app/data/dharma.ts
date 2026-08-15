@@ -33,4 +33,12 @@ export const dharmaOnDate=(m:number,d:number)=>dharmaEvents.filter(x=>{
   const end=new Date(2026,(x.endMonth||x.startMonth)-1,x.endDay||x.startDay).getTime();
   return current>=start&&current<=end;
 });
+export const dharmaInMonth=(m:number)=>dharmaEvents.filter(x=>{
+  const monthStart=new Date(2026,m-1,1).getTime();
+  const monthEnd=new Date(2026,m,0,23,59,59,999).getTime();
+  const start=new Date(2026,x.startMonth-1,x.startDay).getTime();
+  const end=new Date(2026,(x.endMonth||x.startMonth)-1,x.endDay||x.startDay,23,59,59,999).getTime();
+  return start<=monthEnd&&end>=monthStart;
+});
+export const firstDharmaDayInMonth=(x:DharmaEvent,m:number)=>x.startMonth===m?x.startDay:1;
 export const formatDharmaDate=(x:DharmaEvent)=>x.endDay?`${x.startMonth}月${x.startDay}日—${x.endMonth}月${x.endDay}日`:`${x.startMonth}月${x.startDay}日`;
