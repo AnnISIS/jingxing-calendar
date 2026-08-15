@@ -9,7 +9,7 @@ const variants = [
   ["/ordinary/lotus", "莲池", "#9d756f"], ["/ordinary/moon", "松月", "#536477"],
 ];
 
-export function OrdinaryTemplate({ variant, embedded=false, day=15, weekday="星期六", lunarLabel="七月初三", onOpenCalendar }: { variant: Variant; embedded?: boolean; day?: number; weekday?: string; lunarLabel?: string; onOpenCalendar?:()=>void }) {
+export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, weekday="星期六", lunarLabel="七月初三", onOpenCalendar, onSelectDate }: { variant: Variant; embedded?: boolean; month?:number; day?: number; weekday?: string; lunarLabel?: string; onOpenCalendar?:()=>void; onSelectDate?:(month:number,day:number)=>void }) {
   const meta = {
     amitabha: { season:"立秋 · 三候", caption:"暑气渐敛，山色初澄", image:"/amitabha-companion.jpg", alt:"西方三圣行云图" },
     mountain: { season:"白露 · 初候", caption:"白云生远岫，清露满空山", image:"/summer-mountain.jpg", alt:"夏季山居图" },
@@ -29,22 +29,14 @@ export function OrdinaryTemplate({ variant, embedded=false, day=15, weekday="星
         {variant === "amitabha" && <div className="companion-seal">常随弥陀</div>}
 
         <div className="ordinary-date">
-          <p>二〇二六年八月</p><strong>{day}</strong>
+          <p>二〇二六年{month}月</p><strong>{day}</strong>
           <div><span>{weekday}</span><i /><span>农历{lunarLabel}</span></div>
         </div>
         <div className="ordinary-footer"><p>佛历二五七〇年</p><span>{meta.caption}</span></div>
       </section>
 
       <section className="content-sheet editorial-content ordinary-content">
-        <section className="dharma-section">
-          <header><div><i />近期东林法务</div>{onOpenCalendar?<button className="text-button" onClick={onOpenCalendar}>进入日历</button>:<a href="/calendar">进入日历</a>}</header>
-          <article className="timeline-event">
-            <time><strong>27</strong><span>八月</span></time>
-            <div><p>盂兰盆会</p><span>庐山东林寺 · 距今十二日</span></div><b>›</b>
-          </article>
-          <p className="event-caveat">法务信息以主办寺院最新公告为准</p>
-        </section>
-        <div className="next-observance"><span>下一重要圣日</span><p>大势至菩萨圣诞　<span>八月二十五日</span></p><b>›</b></div>
+        {onOpenCalendar&&onSelectDate&&<DailyInfo month={month} day={day} onOpenCalendar={onOpenCalendar} onSelectDate={onSelectDate}/>}
 
         {!embedded&&<div className="variant-picker" aria-label="普通日母版预览">
           <p>普通日画境</p>
@@ -60,3 +52,4 @@ export function OrdinaryTemplate({ variant, embedded=false, day=15, weekday="星
     </main>
   );
 }
+import {DailyInfo} from "../DailyInfo";

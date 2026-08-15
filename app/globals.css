@@ -220,6 +220,7 @@ button { color:inherit; }
 .dharma-section header i { display:block; width:3px; height:15px; background:#8b4b40; }
 .dharma-section header a { color:#918671; font-size:9px; letter-spacing:.1em; text-decoration:none; }
 .timeline-event { display:grid; grid-template-columns:62px 1fr 12px; align-items:center; min-height:73px; }
+.daily-link{width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;cursor:pointer}
 .timeline-event time { height:58px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-right:1px solid #cbbd9f; color:#8e7045; }
 .timeline-event time strong { font-family:"Bodoni 72","Times New Roman",serif; font-size:25px; line-height:1; font-weight:400; }
 .timeline-event time span { margin-top:6px; font-size:9px; letter-spacing:.12em; }
@@ -233,6 +234,11 @@ button { color:inherit; }
 .next-observance p { margin:8px 0 0; font-size:12px; letter-spacing:.06em; }
 .next-observance p span { color:#8d816b; font-size:9px; }
 .next-observance > b { position:absolute; right:2px; bottom:5px; color:#aa9874; font-size:20px; font-weight:400; }
+.next-observance>button:not(.inline-calendar){width:100%;display:flex;align-items:center;justify-content:space-between;padding:0;border:0;background:transparent;color:inherit;text-align:left;cursor:pointer}
+.next-observance p small{color:#8d816b;font-size:9px}
+.next-observance button>b{color:#aa9874;font-size:20px;font-weight:400}
+.next-observance.standalone{min-height:82px;border-top:1px solid #d8cdb7}
+.next-observance .inline-calendar{position:absolute;right:2px;top:27px;border:0;background:transparent;color:#918671;font-size:9px;letter-spacing:.1em;cursor:pointer}
 @media (max-width:370px){ .editorial-content{padding-left:20px;padding-right:20px}.sacred-brief h2{font-size:18px}.brief-actions{gap:15px} }
 
 /* 普通日母版：常随弥陀 */
@@ -337,17 +343,24 @@ button { color:inherit; }
 .festival-dharma small{color:#978d7d;font-size:8px}
 .festival-dharma em{flex:0 0 auto;color:#895248;font-size:8px;font-style:normal;letter-spacing:.05em}
 .festival-dharma+button{margin-top:24px}
+.festival-info .daily-information{margin-top:30px;text-align:left}
+.festival-info .dharma-section{padding:22px 3px 25px;border-top:1px solid #d8cdb7}
+.festival-info .dharma-section button,.festival-info .next-observance button{margin-top:0;padding:0;border:0}
+.festival-info .next-observance{padding-top:27px}
 .year-festivals { margin:42px 0 20px;padding-top:26px;border-top:1px solid #d7ccb7; }.year-festivals>header{display:flex;align-items:center;gap:9px;margin-bottom:25px;font-size:14px;letter-spacing:.12em}.year-festivals>header i{width:3px;height:15px;background:#8b4b40}.year-festivals>header span{margin-left:auto;color:#9c927f;font-size:8px;letter-spacing:.08em}
 .festival-month { display:grid;grid-template-columns:38px 1fr;padding:14px 0;border-top:1px solid rgba(215,204,183,.7); }.festival-month>b{padding-top:9px;color:#9a8157;font-family:"Bodoni 72",serif;font-size:18px;font-weight:400}.festival-month>div>button{width:100%;display:grid;grid-template-columns:37px 1fr 12px;align-items:center;padding:8px 0;border:0;border-bottom:1px solid rgba(222,213,196,.55);background:transparent;color:#514b41;text-align:left;cursor:pointer}.festival-month time{color:#94764d;font-size:9px}.festival-month span{font-size:10px;letter-spacing:.04em}.festival-month small{display:block;margin-top:4px;color:#9e9587;font-size:7px}.festival-month em{color:#ac9a78;font-size:15px;font-style:normal}
 @media(max-width:370px){.festival-poster{height:790px}.festival-copy h1{font-size:23px}.festival-copy{left:24px;right:23px}}
 .month-dharma-status{display:grid;grid-template-columns:4px 1fr auto;align-items:center;gap:12px;margin:0 0 18px;padding:12px 13px;background:rgba(139,76,65,.035);border-top:1px solid rgba(139,76,65,.18);border-bottom:1px solid rgba(139,76,65,.18)}.month-dharma-status>i{width:3px;height:28px;background:#b8aa91}.month-dharma-status.has-dharma>i{background:#8b4c41}.month-dharma-status strong{display:block;color:#665f53;font-size:10px;font-weight:500;letter-spacing:.04em}.month-dharma-status span{display:block;margin-top:5px;color:#a09789;font-size:7px}.month-dharma-status button{border:0;background:transparent;color:#895248;font-size:8px;letter-spacing:.08em}
 
 /* 核验分层与东林法务 */
-.calendar-key{display:flex;justify-content:flex-end;gap:15px;margin:0 0 16px;color:#978e7e;font-size:7px;letter-spacing:.05em}.calendar-key span{display:flex;align-items:center;gap:5px}.calendar-key i{width:6px;height:6px;border-radius:50%;background:#b29358}.calendar-key i.dharma{background:#8c4d43}
+.calendar-key{display:flex;justify-content:flex-end;align-items:center;gap:15px;margin:0 0 16px;color:#978e7e;font-size:7px;letter-spacing:.05em}.calendar-key>button{margin-right:auto;padding:0 0 3px;border:0;border-bottom:1px solid rgba(91,112,94,.35);background:transparent;color:#607263;font-size:8px;letter-spacing:.08em;cursor:pointer}.calendar-key span{display:flex;align-items:center;gap:5px}.calendar-key i{width:6px;height:6px;border-radius:50%;background:#b29358}.calendar-key i.dharma{background:#8c4d43}
 .calendar-grid button.dharma-cell{box-shadow:none}
 .calendar-grid button.event-cell.dharma-cell{background:linear-gradient(180deg,rgba(178,151,96,.08),rgba(178,151,96,.025))}
 .calendar-grid button .dharma-dot{position:absolute;left:50%;bottom:6px;width:4px;height:4px;transform:translateX(-50%);border-radius:50%;background:#9a4f43;box-shadow:0 0 0 2px rgba(154,79,67,.08)}
 .calendar-grid button.selected .dharma-dot{background:#8d443b;box-shadow:0 0 0 2px rgba(141,68,59,.12)}
+.calendar-grid button.real-today strong{box-shadow:inset 0 0 0 1px rgba(82,108,88,.58);color:#526b57}
+.calendar-grid button.real-today.selected strong{box-shadow:none;color:#f8f3e8}
+.calendar-grid button .today-mark{position:absolute;top:2px;right:5px;color:#58705c;font-size:6px;line-height:1;letter-spacing:0}
 .donglin-dharma{margin:40px 0 8px;padding:25px 0 12px;border-top:1px solid #d2c4a7;border-bottom:1px solid #d8cdb7}.donglin-dharma>header{display:flex;align-items:center;gap:9px;font-size:14px;letter-spacing:.12em}.donglin-dharma>header i{width:3px;height:15px;background:#8b4b40}.donglin-dharma>header span{margin-left:auto;color:#987b72;font-size:8px}.donglin-dharma>p{margin:14px 0 18px;color:#9b9284;font-size:8px;line-height:1.8}.donglin-dharma>a{display:grid;grid-template-columns:82px 1fr auto;align-items:center;min-height:55px;border-top:1px solid rgba(218,207,187,.62);color:#514a40;text-decoration:none}.donglin-dharma time{color:#8c574c;font-size:9px}.donglin-dharma a>span{font-size:10px}.donglin-dharma small{display:block;margin-top:5px;color:#999082;font-size:7px}.donglin-dharma em{padding:3px 5px;border:1px solid rgba(139,76,65,.3);color:#8c5d53;font-size:7px;font-style:normal}
 
 /* 月历资料收纳：默认只留下两行清晰入口 */
