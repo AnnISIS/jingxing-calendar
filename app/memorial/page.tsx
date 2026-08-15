@@ -19,22 +19,6 @@ export default function Home() {
       </section>
 
       <section className="content-sheet sacred-sheet editorial-content">
-        <article className="sacred-brief">
-          <span className="brief-ornament">◇</span>
-          <h2>南无大悲观世音菩萨</h2>
-          <p>农历二月十九，为观世音菩萨圣诞。<br />谨依传统佛教纪念日资料收录。</p>
-          <div className="brief-actions">
-            <details>
-              <summary>纪念依据 <i>＋</i></summary>
-              <div>传统汉传佛教寺院多以农历二月十九纪念观世音菩萨圣诞；正式资料页将列出交叉核验来源。</div>
-            </details>
-            <details>
-              <summary>历法详情 <i>＋</i></summary>
-              <div>公历2026年4月6日 · 星期一<br />农历丙午年二月十九 · 佛历2570年</div>
-            </details>
-          </div>
-        </article>
-
         <section className="dharma-section">
           <header><div><i />东林法务</div><a href="#calendar">进入日历</a></header>
           <article className="timeline-event">
