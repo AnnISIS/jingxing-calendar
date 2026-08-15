@@ -7,31 +7,15 @@ export default function Home() {
     <main className="site-shell">
       <section className="today-poster memorial-poster" aria-label="观世音菩萨圣诞佛历海报">
         <div className="paper-grain" />
-        <header className="topbar">
-          <div className="brand"><span className="brand-mark">净</span><span>东林净行日历</span></div>
-          <button className="ghost-button" aria-label="分享今日海报">分享</button>
-        </header>
-
-        <div className="memorial-kicker"><i />佛菩萨纪念日<i /></div>
-        <div className="memorial-title">
-          <h1>观世音菩萨圣诞日</h1>
-          <p className="memorial-lunar">农历二月十九</p>
-          <span className="vertical-seal">圣诞</span>
-        </div>
-
         <div className="sacred-frame" aria-label="观世音菩萨圣像">
-          <div className="frame-ornament top">◆</div>
           <img src="/guanyin-memorial.jpg" alt="观世音菩萨圣像，程宗元绘" />
-          <div className="frame-ornament bottom">◇</div>
         </div>
-        <div className="cloud-pattern cloud-left" aria-hidden="true">☁</div>
-
-        <div className="memorial-date">
-          <strong>公历二〇二六年四月六日</strong><i />
-          <span>星期一　·　佛历二五七〇年</span>
+        <div className="image-veil" aria-hidden="true" />
+        <div className="editorial-title">
+          <p>农历二月十九</p>
+          <h1>观世音菩萨圣诞日</h1>
+          <span>2026.04.06　星期一　·　佛历2570年</span>
         </div>
-        <div className="art-credit">圣像来源：见·佛素材库 · 正式使用前核验授权</div>
-        <div className="scroll-cue"><span>向下查看纪念详情与今日法务</span><b>⌄</b></div>
       </section>
 
       <section className="content-sheet sacred-sheet">
