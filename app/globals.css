@@ -168,6 +168,39 @@ button { color:inherit; }
 .month-notes button { width:100%; min-height:48px; display:grid; grid-template-columns:38px 1fr auto; align-items:center; border:0; border-bottom:1px solid #e1d9ca; background:transparent; color:#565047; text-align:left; cursor:pointer; }.month-notes button time { color:#9c8255; font-family:"Bodoni 72","Times New Roman",serif;font-size:15px}.month-notes button span{font-size:10px;letter-spacing:.04em}.month-notes button b{color:#9b9283;font-size:7px;font-weight:400}
 @media(max-width:370px){.calendar-sheet{padding-left:12px;padding-right:12px}.calendar-grid button{height:58px}.calendar-grid .mark{right:5px}.month-switch strong{font-size:34px}}
 
+/* 月历 V2：月白宣纸、无框日期、活动题签 */
+.calendar-site { background:#f7f4ea; }
+.calendar-hero { height:210px; padding:27px 27px 0; background:#f7f4ea; }
+.calendar-landscape { position:absolute; z-index:1; inset:-170px 0 auto; width:100%; height:430px; object-fit:cover; object-position:50% 16%; filter:grayscale(.42) sepia(.08) saturate(.55) contrast(.72) brightness(1.16); opacity:.2; }
+.calendar-hero-veil { position:absolute; z-index:2; inset:0; background:linear-gradient(180deg,rgba(247,244,234,.58),rgba(247,244,234,.3) 48%,#f7f4ea 100%); }
+.calendar-year { z-index:4; }
+.month-switch { z-index:4; margin-top:31px; }
+.month-switch strong { font-size:40px; }
+.month-switch button { color:#9b8b70; }
+.calendar-sheet { margin-top:0; padding:17px 20px 48px; border-radius:0; background:#f7f4ea; }
+.week-row { margin:0 0 20px; padding-bottom:12px; border-bottom:1px solid rgba(178,165,139,.38); color:#a29887; }
+.calendar-grid { grid-template-columns:repeat(7,1fr); column-gap:4px; row-gap:13px; border:0; }
+.calendar-grid button { height:76px; justify-content:flex-start; padding-top:5px; border:0; background:transparent; }
+.calendar-grid button strong { width:31px; height:31px; font-size:18px; }
+.calendar-grid button small { margin-top:4px; font-size:7px; }
+.calendar-grid button.outside { opacity:.22; }
+.calendar-grid button.event-cell { border-radius:26px 26px 8px 8px; background:linear-gradient(180deg,rgba(178,151,96,.08),rgba(178,151,96,.025)); }
+.calendar-grid button.event-cell.both { background:linear-gradient(180deg,rgba(139,76,65,.09),rgba(178,151,96,.035)); }
+.calendar-grid button.event-cell strong { color:#876b3f; }
+.calendar-grid button.event-cell.both strong { color:#844d43; }
+.calendar-grid button em { margin-top:6px; color:#987f55; font-size:7px; line-height:1.25; font-style:normal; letter-spacing:.02em; white-space:nowrap; }
+.calendar-grid button.both em { color:#87564d; }
+.calendar-grid button.selected { background:transparent; }
+.calendar-grid button.selected strong { background:#5c6d5d; color:#f8f3e8; }
+.selected-day { margin-top:35px; }
+.calendar-hint { margin:17px 0 0; color:#aaa293; text-align:center; font-size:8px; letter-spacing:.12em; }
+@media(max-width:370px){
+  .calendar-sheet { padding-left:15px; padding-right:15px; }
+  .calendar-grid { column-gap:2px; row-gap:10px; }
+  .calendar-grid button { height:72px; }
+  .calendar-grid button em { font-size:6.5px; }
+}
+
 /* 第二屏：连续书页，而非卡片堆叠 */
 .editorial-content { margin-top:0; border-radius:0; padding:0 25px 54px; background:#f7f2e7; }
 .sacred-brief { padding:48px 4px 39px; text-align:center; border-bottom:1px solid #d8cdb7; }
