@@ -40,3 +40,9 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# local deployment artifacts
+/tencent-static/
+/tmp/
+/site-build*.tar.gz
+/*-cloudbase-v*.zip
