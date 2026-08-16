@@ -20,7 +20,7 @@ export function PracticeView({year,month,day,logs,onAdd,onEdit,onRemove,onSelect
  const moveDisplayMonth=(amount:number)=>{const d=new Date(display.year,display.month-1+amount,1);setDisplay({year:d.getFullYear(),month:d.getMonth()+1})};
  return <main className="site-shell practice-site">
   <header className="practice-hero"><span>日用功课</span><h1>{page==="timer"?"一炷清香":"静水流深"}</h1><p>{page==="timer"?"香起一念，心归一处":"一念一行，皆有归处"}</p><time>{year}年{month}月{day}日</time></header>
-  <section className="practice-content"><nav className="practice-page-tabs"><button className={page==="records"?"active":""} onClick={()=>setPage("records")}>功课记录</button><button className={page==="timer"?"active":""} onClick={()=>setPage("timer")}>一炷香</button></nav>
+  <section className={`practice-content ${items.length?"":"is-empty"}`}><nav className="practice-page-tabs"><button className={page==="records"?"active":""} onClick={()=>setPage("records")}>功课记录</button><button className={page==="timer"?"active":""} onClick={()=>setPage("timer")}>一炷香</button></nav>
   {page==="timer"?<IncenseTimer onRecord={onTimerRecord}/>:<>
    <header><div><span>当日功课</span><h2>{items.length?"今日已有所行":"今日尚待起行"}</h2></div><button onClick={onAdd}>＋ 记功课</button></header>
    {totals.length?<div className="practice-totals">{totals.map(x=><div data-kind={x.kind} key={`${x.kind}-${x.unit}`}><span>{x.kind}</span><strong>{x.amount.toLocaleString()}</strong><small>{x.unit}</small></div>)}</div>:<div className="practice-empty"><i>○</i><p>不求多，只求恒</p><button onClick={onAdd}>记下第一笔</button></div>}
