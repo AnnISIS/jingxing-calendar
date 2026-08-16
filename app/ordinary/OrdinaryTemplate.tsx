@@ -1,4 +1,7 @@
 type Variant = "amitabha" | "mountain" | "lotus" | "moon";
+import {getTraditionalTime} from "../data/traditional-time";
+import {PersonalDay} from "../PersonalDay";
+import type {PersonalEvent} from "../data/personal-events";
 
 const CalendarIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3M18 3v3M4.5 8.5h15M5.5 5h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
@@ -9,9 +12,10 @@ const variants = [
   ["/ordinary/lotus", "莲池", "#9d756f"], ["/ordinary/moon", "松月", "#536477"],
 ];
 
-export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, weekday="星期六", lunarLabel="七月初三", onOpenCalendar, onSelectDate }: { variant: Variant; embedded?: boolean; month?:number; day?: number; weekday?: string; lunarLabel?: string; onOpenCalendar?:()=>void; onSelectDate?:(month:number,day:number)=>void }) {
+export function OrdinaryTemplate({ variant, embedded=false, year=2026, month=8, day=15, weekday="星期六", lunarLabel="七月初三", onOpenCalendar, personal }: { variant: Variant; embedded?: boolean; year?:number; month?:number; day?: number; weekday?: string; lunarLabel?: string; onOpenCalendar?:()=>void; personal?:{events:PersonalEvent[];onAdd:()=>void;onEdit:(event:PersonalEvent)=>void;onRemove:(id:string)=>void;onSelectDate:(year:number,month:number,day:number)=>void} }) {
+  const traditional=getTraditionalTime(year,month,day);
   const meta = {
-    amitabha: { season:"立秋 · 三候", caption:"暑气渐敛，山色初澄", image:"/amitabha-companion.jpg", alt:"西方三圣行云图" },
+    amitabha: { season:"立秋 · 三候", caption:"时序清宁，常随佛行", image:"/amitabha-companion.jpg", alt:"西方三圣行云图" },
     mountain: { season:"白露 · 初候", caption:"白云生远岫，清露满空山", image:"/summer-mountain.jpg", alt:"夏季山居图" },
     lotus: { season:"小暑 · 二候", caption:"风过莲池，香远益清", image:"", alt:"莲池清晓" },
     moon: { season:"秋分 · 三候", caption:"松间明月，照见本心", image:"/moon-mountain.jpg", alt:"秋山山水图" },
@@ -25,18 +29,18 @@ export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, wee
         {variant === "moon" && <div className="moon-disc" aria-hidden="true" />}
         <div className="ordinary-veil" />
         <div className="paper-grain" />
-        <div className="season-note"><i />{meta.season}</div>
+        <div className="season-note"><i />{traditional.hou} · {traditional.wuHou}</div>
         {variant === "amitabha" && <div className="companion-seal">常随弥陀</div>}
 
         <div className="ordinary-date">
-          <p>二〇二六年{month}月</p><strong>{day}</strong>
+          <p>{year}年{month}月</p><strong>{day}</strong>
           <div><span>{weekday}</span><i /><span>农历{lunarLabel}</span></div>
         </div>
-        <div className="ordinary-footer"><p>佛历二五七〇年</p><span>{meta.caption}</span></div>
+        <div className="ordinary-footer"><p>佛历{year+544}年</p><span>{meta.caption}</span></div>
       </section>
 
       <section className="content-sheet editorial-content ordinary-content">
-        {onOpenCalendar&&onSelectDate&&<DailyInfo month={month} day={day} onOpenCalendar={onOpenCalendar} onSelectDate={onSelectDate}/>}
+        {personal&&<PersonalDay year={year} month={month} day={day} {...personal}/>}
 
         {!embedded&&<div className="variant-picker" aria-label="普通日母版预览">
           <p>普通日画境</p>
@@ -52,4 +56,3 @@ export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, wee
     </main>
   );
 }
-import {DailyInfo} from "../DailyInfo";

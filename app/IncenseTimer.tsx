@@ -1,0 +1,19 @@
+"use client";
+import {useEffect,useMemo,useState} from "react";
+const TIMER_KEY="jingxing-incense-timer";
+type TimerState={duration:number;remaining:number;status:"idle"|"running"|"paused"|"complete";endAt:number|null};
+const initial:TimerState={duration:30*60,remaining:30*60,status:"idle",endAt:null};
+const pad=(n:number)=>String(n).padStart(2,"0");
+export function IncenseTimer({onRecord}:{onRecord:(minutes:number)=>void}){
+ const [timer,setTimer]=useState<TimerState>(initial),[loaded,setLoaded]=useState(false),[custom,setCustom]=useState("30"),[recorded,setRecorded]=useState(false);
+ useEffect(()=>{const saved=localStorage.getItem(TIMER_KEY);if(saved){try{const x=JSON.parse(saved) as TimerState;if(x.status==="running"&&x.endAt){const left=Math.max(0,Math.ceil((x.endAt-Date.now())/1000));setTimer({...x,remaining:left,status:left?"running":"complete",endAt:left?x.endAt:null})}else setTimer(x)}catch{}}setLoaded(true)},[]);
+ useEffect(()=>{if(loaded)localStorage.setItem(TIMER_KEY,JSON.stringify(timer))},[timer,loaded]);
+ useEffect(()=>{if(timer.status!=="running"||!timer.endAt)return;const tick=()=>setTimer(x=>{if(x.status!=="running"||!x.endAt)return x;const left=Math.max(0,Math.ceil((x.endAt-Date.now())/1000));return left?{...x,remaining:left}:{...x,remaining:0,status:"complete",endAt:null}});tick();const id=setInterval(tick,500);return()=>clearInterval(id)},[timer.status,timer.endAt]);
+ const minutes=Math.floor(timer.remaining/60),seconds=timer.remaining%60,progress=timer.duration?1-timer.remaining/timer.duration:0,burnLevel=Math.max(2,(1-progress)*100);
+ const choose=(mins:number)=>{if(timer.status==="running")return;setTimer({duration:mins*60,remaining:mins*60,status:"idle",endAt:null});setCustom(String(mins));setRecorded(false)};
+ const start=()=>setTimer(x=>({...x,status:"running",endAt:Date.now()+x.remaining*1000}));
+ const pause=()=>setTimer(x=>({...x,status:"paused",endAt:null}));
+ const reset=()=>setTimer(x=>({...x,remaining:x.duration,status:"idle",endAt:null}));
+ const statusText=useMemo(()=>timer.status==="complete"?"一炷香圆满":timer.status==="running"?"香在燃，心安住":timer.status==="paused"?"暂歇片刻":"择一香时，摄心安住",[timer.status]);
+ return <section className="incense-timer"><header><span>一炷香</span><h2>{statusText}</h2></header><div className={`incense-scene ${timer.status}`}><div className="incense-smoke" style={{transform:`translate(-50%, ${progress*140}px)`}}><i/><i/><i/></div><div className="incense-stick"><i style={{height:`${burnLevel}%`}}/><b style={{top:"auto",bottom:`calc(${burnLevel}% - 3px)`}}/></div><div className="incense-bowl"><i/></div></div><time>{pad(minutes)}<i>:</i>{pad(seconds)}</time><p>{timer.status==="running"?`已行 ${Math.floor(progress*100)}%`:`本次 ${Math.round(timer.duration/60)} 分钟`}</p><div className="incense-presets">{[15,30,45,60].map(n=><button className={timer.duration===n*60?"active":""} disabled={timer.status==="running"} key={n} onClick={()=>choose(n)}>{n}<small>分</small></button>)}</div><label className="incense-custom"><span>自定香时</span><input disabled={timer.status==="running"} inputMode="numeric" type="number" min="1" max="240" value={custom} onChange={e=>setCustom(e.target.value)}/><button disabled={timer.status==="running"||!Number(custom)} onClick={()=>choose(Math.min(240,Math.max(1,Number(custom))))}>确定</button></label><div className="incense-actions">{timer.status==="running"?<button className="primary" onClick={pause}>暂停</button>:timer.status==="complete"?<button className="primary" onClick={reset}>再燃一炷</button>:<button className="primary" onClick={start}>{timer.status==="paused"?"继续":"开始"}</button>}<button onClick={reset}>复位</button></div>{timer.status==="complete"&&<button className="record-incense" disabled={recorded} onClick={()=>{onRecord(Math.round(timer.duration/60));setRecorded(true)}}>{recorded?"已记入静坐功课":"记入静坐功课"}</button>}</section>;
+}

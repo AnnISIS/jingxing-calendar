@@ -1,5 +1,7 @@
 import type {Festival} from "./data/festivals";
-import {DailyInfo} from "./DailyInfo";
-export function FestivalPoster({festival,onOpenCalendar,onSelectDate}:{festival:Festival;onOpenCalendar:()=>void;onSelectDate:(month:number,day:number)=>void}){
-  return <main className="site-shell festival-view embedded-view"><section className="festival-poster"><img src={festival.image} alt={festival.title}/><div className="festival-veil"/><div className="festival-kicker">佛菩萨纪念日</div><div className="festival-copy"><p>农历{festival.lunar}</p><h1>{festival.title}</h1><div><span>{festival.kind}</span><i/>公历二〇二六年{festival.month}月{festival.day}日</div></div></section><section className="festival-info"><span>今日纪念</span><h2>{festival.title}</h2><p>恭逢殊胜纪念日，谨依年度佛诞资料收录。</p><DailyInfo month={festival.month} day={festival.day} onOpenCalendar={onOpenCalendar} onSelectDate={onSelectDate}/></section></main>
+import {PersonalDay} from "./PersonalDay";
+import type {PersonalEvent} from "./data/personal-events";
+type PersonalProps={events:PersonalEvent[];onAdd:()=>void;onEdit:(event:PersonalEvent)=>void;onRemove:(id:string)=>void;onSelectDate:(year:number,month:number,day:number)=>void};
+export function FestivalPoster({year,festival,onOpenCalendar,personal}:{year:number;festival:Festival;onOpenCalendar:()=>void;personal?:PersonalProps}){
+  return <main className="site-shell festival-view embedded-view"><section className="festival-poster"><img src={festival.image} alt={festival.title}/><div className="festival-veil"/><div className="festival-kicker">佛菩萨纪念日</div><div className="festival-copy"><p>农历{festival.lunar}</p><h1>{festival.title}</h1><div><span>{festival.kind}</span><i/>公历{year}年{festival.month}月{festival.day}日</div></div></section><section className="festival-info">{personal&&<PersonalDay year={year} month={festival.month} day={festival.day} {...personal}/>}</section></main>
 }

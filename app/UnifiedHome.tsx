@@ -1,10 +1,45 @@
 "use client";
-import {useState} from "react";
+import {useEffect,useRef,useState} from "react";
+import {Converter} from "opencc-js";
 import {OrdinaryTemplate} from "./ordinary/OrdinaryTemplate";
 import {CalendarView} from "./calendar/CalendarView";
+import {CalendarTools} from "./CalendarTools";
 import {findFestival} from "./data/festivals";
 import {FestivalPoster} from "./FestivalPoster";
 import {lunarFullLabel} from "./data/lunar";
+import {PersonalEventDialog} from "./PersonalEventDialog";
+import type {PersonalEvent} from "./data/personal-events";
+import {PERSONAL_EVENTS_KEY} from "./data/personal-events";
+import {PracticeView} from "./PracticeView";
+import {PracticeDialog} from "./PracticeDialog";
+import type {PracticeLog} from "./data/practice";
+import {PRACTICE_LOGS_KEY} from "./data/practice";
 const CalendarIcon=()=> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3M18 3v3M4.5 8.5h15M5.5 5h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></svg>;
-const realToday=()=>{const now=new Date();return now.getFullYear()===2026?{month:now.getMonth()+1,day:now.getDate()}:{month:1,day:1}};
-export default function UnifiedHome(){const [mode,setMode]=useState<"today"|"calendar">("today");const [date,setDate]=useState(realToday);const festival=findFestival(date.month,date.day);const weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"][new Date(2026,date.month-1,date.day).getDay()];const selectDate=(month:number,day:number)=>{setDate({month,day});setMode("today")};return <div className="unified-home">{mode==="today"?(festival?<FestivalPoster festival={festival} onOpenCalendar={()=>setMode("calendar")} onSelectDate={selectDate}/>:<OrdinaryTemplate variant="amitabha" embedded month={date.month} day={date.day} weekday={weekday} lunarLabel={lunarFullLabel(date.month,date.day)} onOpenCalendar={()=>setMode("calendar")} onSelectDate={selectDate}/>):<CalendarView embedded month={date.month} day={date.day} onChange={(month,day)=>setDate({month,day})} onViewDay={()=>setMode("today")}/>}<nav className="bottom-nav unified-nav"><button className={mode==="today"?"active":""} onClick={()=>setMode("today")}><span className="today-dot">●</span><b>{date.month}月{date.day}日</b></button><button className={mode==="calendar"?"active":""} onClick={()=>setMode("calendar")}><CalendarIcon/><b>日历</b></button></nav></div>}
+const ToolsIcon=()=> <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5M4 21h8"/></svg>;
+const PracticeIcon=()=> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c4-3.2 6-6.3 6-9.3A6 6 0 0 0 12 6a6 6 0 0 0-6 5.7C6 14.7 8 17.8 12 21Z"/><path d="M12 6V3M9 5l-1-2M15 5l1-2"/></svg>;
+const realToday=()=>{const now=new Date();return {year:now.getFullYear(),month:now.getMonth()+1,day:now.getDate()}};
+export default function UnifiedHome(){
+  const [mode,setMode]=useState<"today"|"calendar"|"practice"|"tools">("today"),[date,setDate]=useState(realToday);
+  const [traditional,setTraditional]=useState(false),[weekStart,setWeekStart]=useState<"monday"|"sunday">("monday");
+  const [settingsLoaded,setSettingsLoaded]=useState(false);
+  const [personalEvents,setPersonalEvents]=useState<PersonalEvent[]>([]),[personalLoaded,setPersonalLoaded]=useState(false),[personalDialog,setPersonalDialog]=useState(false),[editingPersonal,setEditingPersonal]=useState<PersonalEvent|null>(null);
+  const [practiceLogs,setPracticeLogs]=useState<PracticeLog[]>([]),[practiceLoaded,setPracticeLoaded]=useState(false),[practiceDialog,setPracticeDialog]=useState(false),[editingPractice,setEditingPractice]=useState<PracticeLog|null>(null);
+  const contentRef=useRef<HTMLDivElement>(null);
+  useEffect(()=>{const saved=localStorage.getItem("jingxing-settings");if(saved){try{const x=JSON.parse(saved);setTraditional(!!x.traditional);setWeekStart(x.weekStart==="sunday"?"sunday":"monday")}catch{}}setSettingsLoaded(true)},[]);
+  useEffect(()=>{if(settingsLoaded)localStorage.setItem("jingxing-settings",JSON.stringify({traditional,weekStart}))},[traditional,weekStart,settingsLoaded]);
+  useEffect(()=>{const saved=localStorage.getItem(PERSONAL_EVENTS_KEY);if(saved){try{setPersonalEvents(JSON.parse(saved))}catch{}}setPersonalLoaded(true)},[]);
+  useEffect(()=>{if(personalLoaded)localStorage.setItem(PERSONAL_EVENTS_KEY,JSON.stringify(personalEvents))},[personalEvents,personalLoaded]);
+  useEffect(()=>{const saved=localStorage.getItem(PRACTICE_LOGS_KEY);if(saved){try{setPracticeLogs(JSON.parse(saved))}catch{}}setPracticeLoaded(true)},[]);
+  useEffect(()=>{if(practiceLoaded)localStorage.setItem(PRACTICE_LOGS_KEY,JSON.stringify(practiceLogs))},[practiceLogs,practiceLoaded]);
+  useEffect(()=>{if(!contentRef.current)return;const convert=Converter(traditional?{from:"cn",to:"tw"}:{from:"tw",to:"cn"});const walker=document.createTreeWalker(contentRef.current,NodeFilter.SHOW_TEXT);let node;while((node=walker.nextNode()))node.textContent=convert(node.textContent||"");contentRef.current.querySelectorAll("input").forEach(input=>{if(input.placeholder)input.placeholder=convert(input.placeholder);if(input.ariaLabel)input.ariaLabel=convert(input.ariaLabel)})},[traditional,mode,date,weekStart]);
+  const festival=findFestival(date.year,date.month,date.day),weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"][new Date(date.year,date.month-1,date.day).getDay()];
+  const selectDate=(year:number,month:number,day:number)=>{setDate({year,month,day});setMode("today")};
+  const openPersonal=()=>{setEditingPersonal(null);setPersonalDialog(true)},editPersonal=(event:PersonalEvent)=>{setEditingPersonal(event);setPersonalDialog(true)};
+  const personal={events:personalEvents,onAdd:openPersonal,onEdit:editPersonal,onRemove:(id:string)=>setPersonalEvents(items=>items.filter(x=>x.id!==id)),onSelectDate:selectDate};
+  const openPractice=()=>{setEditingPractice(null);setPracticeDialog(true)},editPractice=(log:PracticeLog)=>{setEditingPractice(log);setPracticeDialog(true)};
+  const recordTimer=(minutes:number)=>setPracticeLogs(items=>[...items,{id:`${Date.now()}-timer`,year:date.year,month:date.month,day:date.day,kind:"静坐",amount:minutes,unit:"分钟",note:"一炷香计时",createdAt:Date.now()}]);
+  const content=mode==="today"?(festival?<FestivalPoster year={date.year} festival={festival} onOpenCalendar={()=>setMode("calendar")} personal={personal}/>:<OrdinaryTemplate variant="amitabha" embedded year={date.year} month={date.month} day={date.day} weekday={weekday} lunarLabel={lunarFullLabel(date.year,date.month,date.day)} onOpenCalendar={()=>setMode("calendar")} personal={personal}/>):mode==="calendar"?<CalendarView embedded year={date.year} month={date.month} day={date.day} weekStart={weekStart} personalEvents={personalEvents} onAddPersonal={openPersonal} onChange={(year,month,day)=>setDate({year,month,day})} onViewDay={()=>setMode("today")}/>:mode==="practice"?<PracticeView year={date.year} month={date.month} day={date.day} logs={practiceLogs} onAdd={openPractice} onEdit={editPractice} onRemove={id=>setPracticeLogs(items=>items.filter(x=>x.id!==id))} onSelectDate={(year,month,day)=>setDate({year,month,day})} onTimerRecord={recordTimer}/>:<CalendarTools year={date.year} month={date.month} day={date.day} onSelectDate={selectDate} traditional={traditional} setTraditional={setTraditional} weekStart={weekStart} setWeekStart={setWeekStart}/>;
+  const savePersonal=(event:PersonalEvent)=>setPersonalEvents(items=>editingPersonal?items.map(x=>x.id===event.id?event:x):[...items,event]);
+  const savePractice=(log:PracticeLog)=>setPracticeLogs(items=>editingPractice?items.map(x=>x.id===log.id?log:x):[...items,log]);
+  return <div className="unified-home" ref={contentRef}>{content}<nav className="bottom-nav unified-nav four"><button className={mode==="today"?"active":""} onClick={()=>setMode("today")}><span className="today-dot">●</span><b>{date.month}月{date.day}日</b></button><button className={mode==="calendar"?"active":""} onClick={()=>setMode("calendar")}><CalendarIcon/><b>日历</b></button><button className={mode==="practice"?"active":""} onClick={()=>setMode("practice")}><PracticeIcon/><b>功课</b></button><button className={mode==="tools"?"active":""} onClick={()=>setMode("tools")}><ToolsIcon/><b>查阅</b></button></nav><PersonalEventDialog open={personalDialog} year={date.year} month={date.month} day={date.day} editing={editingPersonal} onClose={()=>setPersonalDialog(false)} onSave={savePersonal}/><PracticeDialog open={practiceDialog} year={date.year} month={date.month} day={date.day} editing={editingPractice} onClose={()=>setPracticeDialog(false)} onSave={savePractice}/></div>
+}

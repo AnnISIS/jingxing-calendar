@@ -1,0 +1,5 @@
+declare module "lunar-javascript" {
+  export const Solar: any;
+  export const LunarMonth: any;
+  export const Lunar: any;
+}
