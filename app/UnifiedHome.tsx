@@ -11,7 +11,10 @@ import {lunarFullLabel} from "./data/lunar";
 type ViewMode="today"|"calendar";
 type SelectedDate={month:number;day:number};
 
-const CalendarIcon=()=> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3M18 3v3M4.5 8.5h15M5.5 5h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2V7a2 2 0 0 1 2-2Z"/></svg>;
+const CalendarIcon=()=> <svg viewBox="0 0 24 24" aria-hidden="true">
+  <rect x="4.5" y="5.5" width="15" height="15" rx="2"/>
+  <path d="M8 3v5M16 3v5M4.5 10h15"/>
+</svg>;
 const realToday=():SelectedDate=>{const now=new Date();return now.getFullYear()===2026?{month:now.getMonth()+1,day:now.getDate()}:{month:1,day:1}};
 const validDate=(month:number,day:number)=>month>=1&&month<=12&&day>=1&&day<=new Date(2026,month,0).getDate();
 const readDate=():SelectedDate=>{

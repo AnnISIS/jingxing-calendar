@@ -4,7 +4,10 @@ import {getTraditionalTime} from "../data/traditional-time";
 export type OrdinaryVariant = "amitabha" | "mountain" | "lotus" | "moon" | "guanyin-gold" | "guanyin-watermoon" | "guanyin-willow" | "guanyin-nine-lotus" | "guanyin-seated" | "guanyin-standing" | "guanyin-white-blue" | "guanyin-cheng" | "guanyin-thousand-arms" | "guanyin-four-arms" | "guanyin-white-scroll" | "guanyin-lotus-moon" | "guanyin-dragon" | "amitabha-descending";
 
 const CalendarIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3M18 3v3M4.5 8.5h15M5.5 5h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="4.5" y="5.5" width="15" height="15" rx="2" />
+    <path d="M8 3v5M16 3v5M4.5 10h15" />
+  </svg>
 );
 
 const variants = [
