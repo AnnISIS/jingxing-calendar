@@ -13,8 +13,6 @@ const ordinaryVariants:OrdinaryVariant[]=[
   "guanyin-gold",
   "guanyin-watermoon",
   "guanyin-willow",
-  "guanyin-nine-lotus",
-  "guanyin-seated",
   "guanyin-standing",
   "guanyin-white-blue",
   "guanyin-cheng",
