@@ -4,6 +4,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   root: "static-export",
   base: "./",
+  define: {
+    "import.meta.env.VITE_STATIC_EXPORT": JSON.stringify("true"),
+  },
   publicDir: "../public",
   plugins: [
     {

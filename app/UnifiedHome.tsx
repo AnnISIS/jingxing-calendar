@@ -22,8 +22,21 @@ const readDate=():SelectedDate=>{
   const month=Number(match[1]),day=Number(match[2]);
   return validDate(month,day)?{month,day}:realToday();
 };
-const readMode=(fallback:ViewMode):ViewMode=>typeof window!=="undefined"&&window.location.pathname.replace(/\/$/,"")==="/calendar"?"calendar":fallback;
-const urlFor=(mode:ViewMode,date:SelectedDate)=>`${mode==="calendar"?"/calendar":"/"}?date=2026-${String(date.month).padStart(2,"0")}-${String(date.day).padStart(2,"0")}`;
+const isStaticExport=import.meta.env.VITE_STATIC_EXPORT==="true";
+const readMode=(fallback:ViewMode):ViewMode=>{
+  if(typeof window==="undefined")return fallback;
+  if(isStaticExport)return new URLSearchParams(window.location.search).get("view")==="calendar"?"calendar":"today";
+  return window.location.pathname.replace(/\/$/,"")==="/calendar"?"calendar":fallback;
+};
+const urlFor=(mode:ViewMode,date:SelectedDate)=>{
+  const dateValue=`2026-${String(date.month).padStart(2,"0")}-${String(date.day).padStart(2,"0")}`;
+  if(isStaticExport){
+    const params=new URLSearchParams({date:dateValue});
+    if(mode==="calendar")params.set("view","calendar");
+    return `${window.location.pathname}?${params}`;
+  }
+  return `${mode==="calendar"?"/calendar":"/"}?date=${dateValue}`;
+};
 
 const ordinaryVariants:OrdinaryVariant[]=[
   "amitabha",
