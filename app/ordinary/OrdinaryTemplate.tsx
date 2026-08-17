@@ -32,7 +32,7 @@ export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, wee
     "guanyin-white-scroll": {caption:"白衣映月，慈航静远",image:"/ordinary-guanyin-white-scroll.webp",alt:"白衣观世音菩萨长卷"},
     "guanyin-lotus-moon": {caption:"莲心无染，月印千江",image:"/ordinary-guanyin-lotus-moon.webp",alt:"莲月白衣观世音菩萨像"},
     "guanyin-dragon": {caption:"乘愿渡海，慈护群生",image:"/ordinary-guanyin-dragon.webp",alt:"乘龙白衣观世音菩萨像"},
-    "amitabha-descending": {caption:"光明遍照，摄取不舍",image:"/ordinary-amitabha-descending-v2.webp",alt:"南宋阿弥陀佛接引图"},
+    "amitabha-descending": {caption:"光明遍照，摄取不舍",image:"/ordinary-amitabha-descending-v3.webp",alt:"南宋阿弥陀佛接引图"},
   }[variant];
 
   return (

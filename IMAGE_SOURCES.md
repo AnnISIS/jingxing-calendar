@@ -30,7 +30,7 @@
 - `public/ordinary-guanyin-lotus-moon.webp`
 - `public/ordinary-guanyin-dragon.webp`
   - 本地佛素材库：`meet.fo` 观音圣像；已统一压缩为手机竖屏 WebP，候选 07 未采用。
-- `public/ordinary-amitabha-descending-v2.webp`
+- `public/ordinary-amitabha-descending-v3.webp`
   - 作品：*Buddha Amitabha Descending from his Pure Land*，南宋，13世纪。
   - 收藏：The Metropolitan Museum of Art，Object ID 40282。
   - 权利状态：Public Domain。
