@@ -42,8 +42,8 @@ const ordinaryVariants:OrdinaryVariant[]=[
 const ordinaryVariant=(month:number,day:number)=>ordinaryVariants[Math.floor((Date.UTC(2026,month-1,day)-Date.UTC(2026,0,1))/86400000)%ordinaryVariants.length];
 
 export default function UnifiedHome({initialMode="today"}:{initialMode?:ViewMode}){
-  const [mode,setMode]=useState<ViewMode>(()=>readMode(initialMode));
-  const [date,setDate]=useState<SelectedDate>(readDate);
+  const [mode,setMode]=useState<ViewMode>(initialMode);
+  const [date,setDate]=useState<SelectedDate>(realToday);
 
   useEffect(()=>{
     const syncFromHistory=()=>{
