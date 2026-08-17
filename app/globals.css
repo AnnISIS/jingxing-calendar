@@ -10,14 +10,14 @@
 }
 
 @font-face {
-  font-family:"Shinshu Seiten Kaisho";
-  src:url("./fonts/shinshu-seiten-kaisho.woff2") format("woff2");
+  font-family:"Quan Ziku ZhengKai";
+  src:url("./fonts/quan-ziku-zhengkai.woff2") format("woff2");
   font-style:normal;
   font-weight:400;
   font-display:swap;
 }
 
-:root { --paper:#f5f1e7; --ink:#3c3a33; --muted:#817d70; --pine:#526456; --gold:#a5854c; --cinnabar:#8a473d; --font-title:"Shinshu Seiten Kaisho","LXGW WenKai",serif; --font-body:"LXGW WenKai",serif; }
+:root { --paper:#f5f1e7; --ink:#3c3a33; --muted:#817d70; --pine:#526456; --gold:#a5854c; --cinnabar:#8a473d; --font-title:"Quan Ziku ZhengKai","LXGW WenKai",serif; --font-body:"LXGW WenKai",serif; }
 * { box-sizing:border-box; }
 html { background:#d8d5cc; scroll-behavior:smooth; }
 body { margin:0; color:var(--ink); background:linear-gradient(135deg,#d9d7cf,#eeece6); font-family:var(--font-body); }
