@@ -211,7 +211,6 @@ button { color:inherit; }
 .calendar-grid button.selected { background:transparent; }
 .calendar-grid button.selected strong { background:#5c6d5d; color:#f8f3e8; }
 .selected-day { margin-top:35px; }
-.calendar-hint { margin:17px 0 0; color:#958d80; text-align:center; font-size:10px; letter-spacing:.1em; }
 @media(max-width:370px){
   .calendar-sheet { padding-left:15px; padding-right:15px; }
   .calendar-grid { column-gap:2px; row-gap:10px; }
@@ -266,7 +265,7 @@ button { color:inherit; }
 .ordinary-veil::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(240,235,219,.52),transparent 55%); }
 .ordinary-poster .paper-grain { z-index:3; opacity:.08; }
 .season-note { position:absolute; z-index:6; top:35px; left:28px; display:flex; align-items:center; gap:10px; color:#625b4d; font-size:12px; letter-spacing:.18em; }
-.season-note i { display:block; width:24px; height:1px; background:#99815a; }
+.season-note i { display:none; }
 .season-note span{display:flex;flex-direction:column;gap:5px}.season-note small{color:inherit;font-size:9.5px;letter-spacing:.12em;opacity:.86}
 .companion-seal { position:absolute; z-index:6; top:34px; right:27px; padding:6px 5px; border:1px solid rgba(127,66,55,.58); color:#864b41; font-size:8px; line-height:1.35; letter-spacing:.12em; writing-mode:vertical-rl; }
 .ordinary-date { position:absolute; z-index:6; top:102px; left:29px; color:#383a32; }
