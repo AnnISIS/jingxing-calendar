@@ -1,4 +1,7 @@
-type Variant = "amitabha" | "mountain" | "lotus" | "moon";
+import {DailyInfo} from "../DailyInfo";
+import {getTraditionalTime} from "../data/traditional-time";
+
+export type OrdinaryVariant = "amitabha" | "mountain" | "lotus" | "moon" | "guanyin-gold" | "guanyin-watermoon" | "guanyin-willow";
 
 const CalendarIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3M18 3v3M4.5 8.5h15M5.5 5h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
@@ -9,12 +12,16 @@ const variants = [
   ["/ordinary/lotus", "莲池", "#9d756f"], ["/ordinary/moon", "松月", "#536477"],
 ];
 
-export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, weekday="星期六", lunarLabel="七月初三", onOpenCalendar, onSelectDate }: { variant: Variant; embedded?: boolean; month?:number; day?: number; weekday?: string; lunarLabel?: string; onOpenCalendar?:()=>void; onSelectDate?:(month:number,day:number)=>void }) {
+export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, weekday="星期六", lunarLabel="七月初三", onOpenCalendar, onSelectDate }: { variant: OrdinaryVariant; embedded?: boolean; month?:number; day?: number; weekday?: string; lunarLabel?: string; onOpenCalendar?:()=>void; onSelectDate?:(month:number,day:number)=>void }) {
+  const traditional=getTraditionalTime(2026,month,day);
   const meta = {
-    amitabha: { season:"立秋 · 三候", caption:"暑气渐敛，山色初澄", image:"/amitabha-companion.jpg", alt:"西方三圣行云图" },
-    mountain: { season:"白露 · 初候", caption:"白云生远岫，清露满空山", image:"/summer-mountain.jpg", alt:"夏季山居图" },
-    lotus: { season:"小暑 · 二候", caption:"风过莲池，香远益清", image:"", alt:"莲池清晓" },
-    moon: { season:"秋分 · 三候", caption:"松间明月，照见本心", image:"/moon-mountain.jpg", alt:"秋山山水图" },
+    amitabha: { caption:"时序清宁，常随佛行", image:"/amitabha-companion.jpg", alt:"西方三圣行云图" },
+    mountain: { caption:"白云生远岫，清露满空山", image:"/summer-mountain.jpg", alt:"夏季山居图" },
+    lotus: { caption:"风过莲池，香远益清", image:"", alt:"莲池清晓" },
+    moon: { caption:"松间明月，照见本心", image:"/moon-mountain.jpg", alt:"秋山山水图" },
+    "guanyin-gold": {caption:"慈眼视众生，清风满人间",image:"/ordinary-guanyin-gold.jpg",alt:"白衣观世音菩萨立像"},
+    "guanyin-watermoon": {caption:"水月澄明，莲心自在",image:"/ordinary-guanyin-watermoon.png",alt:"水月观世音菩萨坐像"},
+    "guanyin-willow": {caption:"杨枝洒净，愿海清凉",image:"/ordinary-guanyin-willow.jpg",alt:"杨柳净瓶观世音菩萨立像"},
   }[variant];
 
   return (
@@ -25,7 +32,7 @@ export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, wee
         {variant === "moon" && <div className="moon-disc" aria-hidden="true" />}
         <div className="ordinary-veil" />
         <div className="paper-grain" />
-        <div className="season-note"><i />{meta.season}</div>
+        <div className="season-note"><i /><span>{traditional.hou}<small>{traditional.wuHou}</small></span></div>
         {variant === "amitabha" && <div className="companion-seal">常随弥陀</div>}
 
         <div className="ordinary-date">
@@ -52,4 +59,3 @@ export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, wee
     </main>
   );
 }
-import {DailyInfo} from "../DailyInfo";
