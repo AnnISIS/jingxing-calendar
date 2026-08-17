@@ -271,9 +271,9 @@ button { color:inherit; }
 .companion-seal { position:absolute; z-index:6; top:34px; right:27px; padding:6px 5px; border:1px solid rgba(127,66,55,.58); color:#864b41; font-size:8px; line-height:1.35; letter-spacing:.12em; writing-mode:vertical-rl; }
 .ordinary-date { position:absolute; z-index:6; top:102px; left:29px; color:#383a32; }
 .ordinary-date > p { margin:0; color:#675f51; font-size:13px; letter-spacing:.17em; }
-.ordinary-date > strong { display:block; margin:1px 0 -2px -4px; font-family:var(--font-body); font-size:134px; line-height:1; font-weight:400; letter-spacing:-.08em; }
-.ordinary-date > div { display:flex; align-items:center; gap:11px; font-size:14px; letter-spacing:.1em; }
-.ordinary-date > div i { width:20px; height:1px; background:rgba(85,80,68,.5); }
+.ordinary-date > strong { display:block; margin:1px 0 3px -4px; font-family:var(--font-body); font-size:118px; line-height:1; font-weight:400; letter-spacing:-.07em; }
+.ordinary-date > div { display:flex; flex-direction:column; align-items:flex-start; gap:3px; font-size:13px; line-height:1.45; letter-spacing:.1em; }
+.ordinary-date > div i { display:none; }
 .ordinary-footer { position:absolute; z-index:6; left:29px; right:28px; bottom:34px; display:flex; align-items:flex-end; justify-content:space-between; padding-top:15px; border-top:1px solid rgba(244,239,222,.48); color:#f0ecdf; text-shadow:0 1px 10px rgba(37,45,35,.18); }
 .ordinary-footer p,.ordinary-footer span { margin:0; }
 .ordinary-footer p { font-size:12px; letter-spacing:.13em; }.ordinary-footer span { font-size:11px; letter-spacing:.1em; }
@@ -317,7 +317,7 @@ button { color:inherit; }
 .variant-lotus .ordinary-date > strong { color:#4d5548; }
 @media (max-width:370px){
   .ordinary-poster { height:790px; }
-  .ordinary-date > strong { font-size:120px; }
+  .ordinary-date > strong { font-size:108px; }
   .ordinary-footer { left:24px; right:23px; }
   .ordinary-footer span { display:none; }
 }
