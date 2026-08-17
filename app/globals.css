@@ -88,7 +88,7 @@ button { color:inherit; }
 .details-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:0 3px 18px; }.details-grid p { margin:0; font-size:11px; }.details-grid span { display:block; margin-bottom:3px; color:#9c8f76; font-size:9px; }
 .source-note { margin:22px 0 0; text-align:center; color:#aaa293; font-size:9px; letter-spacing:.08em; }
 .bottom-nav { position:fixed; z-index:20; bottom:0; left:50%; transform:translateX(-50%); width:min(100%,430px); height:66px; display:grid; grid-template-columns:1fr 1fr; background:rgba(247,244,236,.95); border-top:1px solid rgba(194,185,163,.65); backdrop-filter:blur(16px); }
-.bottom-nav a,.bottom-nav button { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; border:0; background:transparent; color:#989185; text-decoration:none; font:inherit; font-size:10px; letter-spacing:.15em; cursor:pointer; }.bottom-nav b { font-weight:400; }.bottom-nav svg { width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.4; }.bottom-nav .active { color:#765f3c; }.today-dot { display:grid; place-items:center; width:19px; height:19px; border:1px solid currentColor; border-radius:50%; font-size:5px; }
+.bottom-nav a,.bottom-nav button { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; border:0; background:transparent; color:#8c8579; text-decoration:none; font:inherit; font-size:12px; letter-spacing:.12em; cursor:pointer; }.bottom-nav b { font-weight:400; }.bottom-nav svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.4; }.bottom-nav .active { color:#765f3c; }.today-dot { display:grid; place-items:center; width:20px; height:20px; border:1px solid currentColor; border-radius:50%; font-size:5px; }
 @media (min-width:700px){ .site-shell { margin:24px auto; min-height:calc(100vh - 48px); }.bottom-nav{bottom:24px;} }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
@@ -156,27 +156,27 @@ button { color:inherit; }
 .calendar-site { background:#f6f1e5; }
 .calendar-hero { position:relative; height:230px; overflow:hidden; padding:28px 25px 0; background:linear-gradient(150deg,#f3edde,#dedfcf); }
 .calendar-year { position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between; color:#7e735f; }
-.calendar-year span { padding:5px 7px; border:1px solid rgba(135,77,62,.5); color:#874d43; font-size:8px; letter-spacing:.16em; }
-.calendar-year p { margin:0; font-size:9px; letter-spacing:.2em; }
+.calendar-year span { padding:6px 8px; border:1px solid rgba(135,77,62,.5); color:#874d43; font-size:10px; letter-spacing:.14em; }
+.calendar-year p { margin:0; font-size:11px; letter-spacing:.16em; }
 .month-switch { position:relative; z-index:3; display:grid; grid-template-columns:30px 1fr 30px; align-items:center; margin-top:39px; text-align:center; }
 .month-switch button { border:0; background:transparent; color:#9a8b70; font-size:27px; font-weight:300; }
 .month-switch div { display:flex; flex-direction:column; align-items:center; }
 .month-switch strong { color:#413d34; font-size:38px; line-height:1.2; font-weight:500; letter-spacing:.18em; text-indent:.18em; }
-.month-switch span { margin-top:9px; color:#827b6d; font-size:9px; letter-spacing:.12em; }
+.month-switch span { margin-top:9px; color:#756f63; font-size:11px; letter-spacing:.1em; }
 .month-wash { position:absolute; z-index:1; inset:0; opacity:.24; }
 .month-wash i { position:absolute; bottom:-50px; width:250px; height:145px; border-radius:50% 50% 0 0; background:#839582; transform:rotate(-8deg); }
 .month-wash i:nth-child(1){left:-65px}.month-wash i:nth-child(2){left:115px;bottom:-78px;background:#687d6d;transform:rotate(12deg)}.month-wash i:nth-child(3){right:-90px;bottom:-43px;background:#9da99a;transform:rotate(-12deg)}
 .calendar-sheet { position:relative; z-index:4; margin-top:-16px; padding:26px 17px 45px; border-radius:18px 18px 0 0; background:#faf7ef; }
-.week-row { display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:7px; color:#a19889; text-align:center; font-size:9px; }
+.week-row { display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:7px; color:#918878; text-align:center; font-size:11px; }
 .calendar-grid { display:grid; grid-template-columns:repeat(7,1fr); border-top:1px solid #d8cfbd; border-left:1px solid #e2dacb; }
 .calendar-grid button { position:relative; height:62px; display:flex; flex-direction:column; align-items:center; justify-content:center; border:0; border-right:1px solid #e2dacb; border-bottom:1px solid #e2dacb; background:transparent; color:#4e493f; cursor:pointer; }
 .calendar-grid button strong { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; font-family:var(--font-body); font-size:17px; line-height:1; font-weight:400; }
-.calendar-grid button small { margin-top:3px; color:#9b9386; font-size:7px; }
+.calendar-grid button small { margin-top:3px; color:#8f877a; font-size:9.5px; }
 .calendar-grid button.outside { color:#c8c1b4; opacity:.47; cursor:default; }
 .calendar-grid button.selected strong { background:#5c6d5d; color:#f8f3e8; }
 .calendar-grid .mark { position:absolute; top:6px; right:7px; width:4px; height:4px; border-radius:50%; background:#ad8b4d; }
 .calendar-grid .mark.dharma { background:#8b4c41; }.calendar-grid .mark.both { width:8px; border-radius:4px; background:linear-gradient(90deg,#ad8b4d 0 50%,#8b4c41 50%); }
-.calendar-legend { display:flex; justify-content:flex-end; gap:15px; padding:11px 2px 0; color:#9b9386; font-size:7px; }
+.calendar-legend { display:flex; justify-content:flex-end; gap:15px; padding:11px 2px 0; color:#8f877a; font-size:9px; }
 .calendar-legend span { display:flex; align-items:center; gap:5px; }.calendar-legend i { width:5px; height:5px; border-radius:50%; background:#ad8b4d; }.calendar-legend i.dharma { background:#8b4c41; }
 .selected-day { display:grid; grid-template-columns:60px 1fr 14px; align-items:center; min-height:84px; margin:28px 2px 0; padding:12px 2px; border-top:1px solid #c9bb9f; border-bottom:1px solid #dfd6c4; }
 .selected-day time { height:57px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-right:1px solid #d5c8ae; color:#657363; }.selected-day time strong { font-family:var(--font-body);font-size:27px;line-height:1;font-weight:400}.selected-day time span{margin-top:6px;font-size:8px}
@@ -200,23 +200,23 @@ button { color:inherit; }
 .calendar-grid { grid-template-columns:repeat(7,1fr); column-gap:4px; row-gap:13px; border:0; }
 .calendar-grid button { height:76px; justify-content:flex-start; padding-top:5px; border:0; background:transparent; }
 .calendar-grid button strong { width:31px; height:31px; font-size:18px; }
-.calendar-grid button small { margin-top:4px; font-size:7px; }
+.calendar-grid button small { margin-top:4px; font-size:9.5px; }
 .calendar-grid button.outside { opacity:.22; }
 .calendar-grid button.event-cell { border-radius:26px 26px 8px 8px; background:linear-gradient(180deg,rgba(178,151,96,.08),rgba(178,151,96,.025)); }
 .calendar-grid button.event-cell.both { background:linear-gradient(180deg,rgba(139,76,65,.09),rgba(178,151,96,.035)); }
 .calendar-grid button.event-cell strong { color:#876b3f; }
 .calendar-grid button.event-cell.both strong { color:#844d43; }
-.calendar-grid button em { margin-top:6px; color:#987f55; font-size:7px; line-height:1.25; font-style:normal; letter-spacing:.02em; white-space:nowrap; }
+.calendar-grid button em { margin-top:5px; color:#8f744a; font-size:8.5px; line-height:1.25; font-style:normal; letter-spacing:0; white-space:nowrap; }
 .calendar-grid button.both em { color:#87564d; }
 .calendar-grid button.selected { background:transparent; }
 .calendar-grid button.selected strong { background:#5c6d5d; color:#f8f3e8; }
 .selected-day { margin-top:35px; }
-.calendar-hint { margin:17px 0 0; color:#aaa293; text-align:center; font-size:8px; letter-spacing:.12em; }
+.calendar-hint { margin:17px 0 0; color:#958d80; text-align:center; font-size:10px; letter-spacing:.1em; }
 @media(max-width:370px){
   .calendar-sheet { padding-left:15px; padding-right:15px; }
   .calendar-grid { column-gap:2px; row-gap:10px; }
   .calendar-grid button { height:72px; }
-  .calendar-grid button em { font-size:6.5px; }
+  .calendar-grid button em { font-size:8px; }
 }
 
 /* 第二屏：连续书页，而非卡片堆叠 */
@@ -265,18 +265,18 @@ button { color:inherit; }
 .ordinary-veil { position:absolute; z-index:2; inset:0; background:linear-gradient(180deg,rgba(239,235,219,.89) 0%,rgba(232,226,208,.46) 27%,rgba(215,216,192,.1) 53%,rgba(176,186,160,.25) 78%,rgba(75,88,72,.63) 100%); }
 .ordinary-veil::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(240,235,219,.52),transparent 55%); }
 .ordinary-poster .paper-grain { z-index:3; opacity:.08; }
-.season-note { position:absolute; z-index:6; top:35px; left:28px; display:flex; align-items:center; gap:10px; color:#726a58; font-size:10px; letter-spacing:.22em; }
+.season-note { position:absolute; z-index:6; top:35px; left:28px; display:flex; align-items:center; gap:10px; color:#625b4d; font-size:12px; letter-spacing:.18em; }
 .season-note i { display:block; width:24px; height:1px; background:#99815a; }
-.season-note span{display:flex;flex-direction:column;gap:5px}.season-note small{color:inherit;font-size:7px;letter-spacing:.16em;opacity:.76}
+.season-note span{display:flex;flex-direction:column;gap:5px}.season-note small{color:inherit;font-size:9.5px;letter-spacing:.12em;opacity:.86}
 .companion-seal { position:absolute; z-index:6; top:34px; right:27px; padding:6px 5px; border:1px solid rgba(127,66,55,.58); color:#864b41; font-size:8px; line-height:1.35; letter-spacing:.12em; writing-mode:vertical-rl; }
 .ordinary-date { position:absolute; z-index:6; top:102px; left:29px; color:#383a32; }
-.ordinary-date > p { margin:0; color:#766d5c; font-size:11px; letter-spacing:.22em; }
+.ordinary-date > p { margin:0; color:#675f51; font-size:13px; letter-spacing:.17em; }
 .ordinary-date > strong { display:block; margin:1px 0 -2px -4px; font-family:var(--font-body); font-size:134px; line-height:1; font-weight:400; letter-spacing:-.08em; }
-.ordinary-date > div { display:flex; align-items:center; gap:11px; font-size:11px; letter-spacing:.14em; }
+.ordinary-date > div { display:flex; align-items:center; gap:11px; font-size:14px; letter-spacing:.1em; }
 .ordinary-date > div i { width:20px; height:1px; background:rgba(85,80,68,.5); }
 .ordinary-footer { position:absolute; z-index:6; left:29px; right:28px; bottom:34px; display:flex; align-items:flex-end; justify-content:space-between; padding-top:15px; border-top:1px solid rgba(244,239,222,.48); color:#f0ecdf; text-shadow:0 1px 10px rgba(37,45,35,.18); }
 .ordinary-footer p,.ordinary-footer span { margin:0; }
-.ordinary-footer p { font-size:10px; letter-spacing:.16em; }.ordinary-footer span { font-size:9px; letter-spacing:.13em; }
+.ordinary-footer p { font-size:12px; letter-spacing:.13em; }.ordinary-footer span { font-size:11px; letter-spacing:.1em; }
 .ordinary-content { margin-top:0; padding-top:0; }
 .ordinary-content .dharma-section { padding-top:42px; }
 .template-link { display:block; margin:35px auto 5px; width:max-content; padding-bottom:3px; border-bottom:1px solid #c1b493; color:#968a73; font-size:8px; letter-spacing:.12em; text-decoration:none; }
@@ -381,14 +381,14 @@ button { color:inherit; }
 @media(max-width:370px){.festival-poster{height:790px}.festival-copy h1{font-size:25px}.festival-copy{left:24px;right:23px}}
 
 /* 核验分层与东林法务 */
-.calendar-key{display:flex;justify-content:flex-end;align-items:center;gap:15px;margin:0 0 16px;color:#978e7e;font-size:7px;letter-spacing:.05em}.calendar-key>button{margin-right:auto;padding:0 0 3px;border:0;border-bottom:1px solid rgba(91,112,94,.35);background:transparent;color:#607263;font-size:8px;letter-spacing:.08em;cursor:pointer}.calendar-key span{display:flex;align-items:center;gap:5px}.calendar-key i{width:6px;height:6px;border-radius:50%;background:#b29358}.calendar-key i.dharma{background:#8c4d43}
+.calendar-key{display:flex;justify-content:flex-end;align-items:center;gap:13px;margin:0 0 16px;color:#877f71;font-size:9px;letter-spacing:.03em}.calendar-key>button{margin-right:auto;padding:0 0 3px;border:0;border-bottom:1px solid rgba(91,112,94,.35);background:transparent;color:#526757;font-size:10px;letter-spacing:.05em;cursor:pointer}.calendar-key span{display:flex;align-items:center;gap:5px}.calendar-key i{width:6px;height:6px;border-radius:50%;background:#b29358}.calendar-key i.dharma{background:#8c4d43}
 .calendar-grid button.dharma-cell{box-shadow:none}
 .calendar-grid button.event-cell.dharma-cell{background:linear-gradient(180deg,rgba(178,151,96,.08),rgba(178,151,96,.025))}
 .calendar-grid button .dharma-dot{position:absolute;left:50%;bottom:-4px;width:4px;height:4px;z-index:2;transform:translateX(-50%);border-radius:50%;background:#9a4f43;box-shadow:0 0 0 2px rgba(154,79,67,.08)}
 .calendar-grid button.selected .dharma-dot{background:#8d443b;box-shadow:0 0 0 2px rgba(141,68,59,.12)}
 .calendar-grid button.real-today strong{box-shadow:inset 0 0 0 1px rgba(82,108,88,.58);color:#526b57}
 .calendar-grid button.real-today.selected strong{box-shadow:none;color:#f8f3e8}
-.calendar-grid button .today-mark{position:absolute;top:2px;right:5px;color:#58705c;font-size:6px;line-height:1;letter-spacing:0}
+.calendar-grid button .today-mark{position:absolute;top:2px;right:4px;color:#4e6653;font-size:8px;line-height:1;letter-spacing:0}
 .donglin-dharma{margin:40px 0 8px;padding:25px 0 12px;border-top:1px solid #d2c4a7;border-bottom:1px solid #d8cdb7}.donglin-dharma>header{display:flex;align-items:center;gap:9px;font-size:14px;letter-spacing:.12em}.donglin-dharma>header i{width:3px;height:15px;background:#8b4b40}.donglin-dharma>header span{margin-left:auto;color:#987b72;font-size:8px}.donglin-dharma>p{margin:14px 0 18px;color:#9b9284;font-size:8px;line-height:1.8}.donglin-dharma .dharma-record{display:grid;grid-template-columns:82px 1fr;align-items:center;min-height:55px;border-top:1px solid rgba(218,207,187,.62);color:#514a40}.donglin-dharma time{color:#8c574c;font-size:9px}.donglin-dharma .dharma-record>span{font-size:10px}.donglin-dharma small{display:block;margin-top:5px;color:#999082;font-size:7px}
 
 /* 月历资料收纳：默认只留下两行清晰入口 */
