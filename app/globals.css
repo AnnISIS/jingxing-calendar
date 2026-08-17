@@ -100,7 +100,7 @@ button { color:inherit; }
 .memorial-kicker i { width:19px; height:1px; background:#b49b6f; }
 .memorial-title { position:absolute; z-index:8; top:112px; left:33px; width:128px; }
 .memorial-title p { margin:0 0 8px; color:#806f56; font-size:9px; letter-spacing:.15em; white-space:nowrap; }
-.memorial-title h1 { margin:0; color:#443b31; font-size:28px; line-height:1.34; font-weight:500; letter-spacing:.12em; }
+.memorial-title h1 { margin:0; color:#443b31; font-size:30px; line-height:1.3; font-weight:400; letter-spacing:.1em; }
 .vertical-seal { position:absolute; left:-3px; top:77px; transform:translateX(-100%); width:23px; height:42px; display:grid; place-items:center; border:1px solid rgba(135,66,54,.7); color:#88463c; font-size:9px; line-height:1.3; writing-mode:vertical-rl; letter-spacing:.08em; }
 .title-rule { display:block; width:37px; height:1px; margin:12px 0 9px; background:#9e8255; }
 .memorial-title .memorial-lunar { color:#5f564a; font-size:11px; letter-spacing:.2em; }
@@ -122,7 +122,7 @@ button { color:inherit; }
 .lotus-mark { display:grid; place-items:center; width:43px; height:43px; flex:0 0 auto; margin-right:13px; border:1px solid #bba274; border-radius:50% 50% 46% 46%; color:#967846; font-size:12px; }
 .name-card { margin-top:14px; padding:14px 15px; display:grid; grid-template-columns:43px 1fr; align-items:center; border:1px solid #ddd2bd; background:rgba(255,253,247,.7); }
 .name-card > span { grid-row:1 / span 2; color:#9b8052; font-size:9px; letter-spacing:.2em; }.name-card p { margin:0; font-size:14px; letter-spacing:.11em; }.name-card small { margin-top:5px; color:#9c9588; font-size:8px; }
-@media (max-width:370px){ .sacred-frame{right:17px;width:228px}.memorial-title{left:27px}.memorial-title h1{font-size:25px}.memorial-date{left:26px} }
+@media (max-width:370px){ .sacred-frame{right:17px;width:228px}.memorial-title{left:27px}.memorial-title h1{font-size:26px}.memorial-date{left:26px} }
 
 /* 圣日母版 V2：中轴礼敬式 */
 .memorial-poster { height:920px; min-height:920px; padding-left:22px; padding-right:22px; background:linear-gradient(180deg,#f7f2e7 0%,#f0e8d6 68%,#e4dbc6 100%); }
@@ -131,7 +131,7 @@ button { color:inherit; }
 .memorial-poster::after { display:none; }
 .memorial-kicker { margin-top:22px; }
 .memorial-title { position:relative; top:auto; left:auto; width:auto; margin-top:25px; text-align:center; }
-.memorial-title h1 { margin:0; color:#403930; font-size:27px; line-height:1.3; font-weight:500; letter-spacing:.1em; white-space:nowrap; }
+.memorial-title h1 { margin:0; color:#403930; font-size:29px; line-height:1.28; font-weight:400; letter-spacing:.08em; white-space:nowrap; }
 .memorial-title .memorial-lunar { margin:9px 0 0; color:#7c6c55; font-size:11px; letter-spacing:.22em; }
 .memorial-title .vertical-seal { position:relative; inset:auto; transform:none; display:inline-grid; width:42px; height:20px; margin-top:12px; writing-mode:horizontal-tb; font-size:8px; letter-spacing:.15em; background:rgba(139,70,58,.03); }
 .sacred-frame { top:230px; left:50%; right:auto; transform:translateX(-50%); width:292px; height:575px; padding:8px; background:rgba(252,249,240,.72); border-color:rgba(145,117,69,.31); box-shadow:0 20px 52px rgba(74,58,35,.09); }
@@ -147,7 +147,7 @@ button { color:inherit; }
 .memorial-poster .scroll-cue { bottom:8px; }
 @media (max-width:370px){
   .memorial-title { left:auto; }
-  .memorial-title h1 { font-size:22px; }
+  .memorial-title h1 { font-size:24px; }
   .sacred-frame { left:50%; right:auto; width:272px; height:536px; }
   .memorial-date { left:0; }
 }
@@ -193,7 +193,7 @@ button { color:inherit; }
 .calendar-hero-veil { position:absolute; z-index:2; inset:0; background:linear-gradient(180deg,rgba(247,244,234,.58),rgba(247,244,234,.3) 48%,#f7f4ea 100%); }
 .calendar-year { z-index:4; }
 .month-switch { z-index:4; margin-top:31px; }
-.month-switch strong { font-size:40px; }
+.month-switch strong { font-size:42px; font-weight:400; }
 .month-switch button { color:#9b8b70; }
 .calendar-sheet { margin-top:0; padding:17px 20px 48px; border-radius:0; background:#f7f4ea; }
 .week-row { margin:0 0 20px; padding-bottom:12px; border-bottom:1px solid rgba(178,165,139,.38); color:#a29887; }
@@ -333,13 +333,13 @@ button { color:inherit; }
 .image-veil::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(240,232,213,.2),transparent 30%,transparent 72%,rgba(240,232,213,.12)); }
 .editorial-title { position:absolute; z-index:6; left:31px; right:28px; bottom:38px; padding-top:18px; border-top:1px solid rgba(83,69,49,.35); color:#3f392f; }
 .editorial-title p { margin:0 0 9px; color:#8b6744; font-size:10px; letter-spacing:.28em; }
-.editorial-title h1 { margin:0; font-size:28px; line-height:1.25; font-weight:500; letter-spacing:.08em; white-space:nowrap; }
+.editorial-title h1 { margin:0; font-size:30px; line-height:1.24; font-weight:400; letter-spacing:.06em; white-space:nowrap; }
 .editorial-title span { display:block; margin-top:11px; color:#6d6455; font-family:var(--font-body); font-size:9px; letter-spacing:.09em; }
 @media (max-width:370px){
   .memorial-poster { height:790px; min-height:790px; }
   .sacred-frame { inset:0; width:100%; height:100%; transform:none; }
   .editorial-title { left:24px; right:23px; }
-  .editorial-title h1 { font-size:23px; }
+  .editorial-title h1 { font-size:25px; }
 }
 
 /* 今日与月历：同页双视图 */
@@ -359,8 +359,8 @@ button { color:inherit; }
 .festival-veil { position:absolute;z-index:2;inset:0;background:linear-gradient(180deg,rgba(245,239,223,.26),transparent 44%,rgba(230,220,196,.2) 62%,rgba(239,231,211,.96) 89%,#eee5d1); }
 .festival-kicker { position:absolute;z-index:3;top:32px;left:31px;color:#785f3d;font-size:9px;letter-spacing:.28em;writing-mode:vertical-rl;padding:9px 6px;border:1px solid rgba(133,88,63,.45); }
 .festival-copy { position:absolute;z-index:3;left:30px;right:28px;bottom:38px;padding-top:17px;border-top:1px solid rgba(78,64,46,.4);color:#40382e; }
-.festival-copy p { margin:0 0 9px;color:#87623f;font-size:10px;letter-spacing:.24em; }.festival-copy h1{margin:0;font-size:27px;line-height:1.35;font-weight:500;letter-spacing:.07em}.festival-copy div{display:flex;align-items:center;gap:10px;margin-top:12px;color:#746957;font-size:9px;letter-spacing:.08em}.festival-copy div span{padding:3px 7px;border:1px solid rgba(139,72,58,.52);color:#884c41}.festival-copy div i{width:18px;height:1px;background:#a58d67}
-.festival-info { min-height:300px;padding:43px 28px 105px;background:#f7f2e7;text-align:center; }.festival-info>span{color:#9b825a;font-size:9px;letter-spacing:.2em}.festival-info h2{margin:17px 0 13px;font-size:20px;font-weight:500;letter-spacing:.1em}.festival-info p{margin:0;color:#92897a;font-size:10px;letter-spacing:.05em}.festival-info button{margin-top:30px;padding:9px 18px;border:1px solid #bdab86;background:transparent;color:#796849;font-size:9px;letter-spacing:.13em}
+.festival-copy p { margin:0 0 9px;color:#87623f;font-size:10px;letter-spacing:.24em; }.festival-copy h1{margin:0;font-size:29px;line-height:1.3;font-weight:400;letter-spacing:.05em}.festival-copy div{display:flex;align-items:center;gap:10px;margin-top:12px;color:#746957;font-size:9px;letter-spacing:.08em}.festival-copy div span{padding:3px 7px;border:1px solid rgba(139,72,58,.52);color:#884c41}.festival-copy div i{width:18px;height:1px;background:#a58d67}
+.festival-info { min-height:300px;padding:43px 28px 105px;background:#f7f2e7;text-align:center; }.festival-info>span{color:#9b825a;font-size:9px;letter-spacing:.2em}.festival-info h2{margin:17px 0 13px;font-size:22px;font-weight:400;letter-spacing:.08em}.festival-info p{margin:0;color:#92897a;font-size:10px;letter-spacing:.05em}.festival-info button{margin-top:30px;padding:9px 18px;border:1px solid #bdab86;background:transparent;color:#796849;font-size:9px;letter-spacing:.13em}
 .festival-dharma{margin:30px 0 0;padding:18px 0 2px;border-top:1px solid rgba(139,76,65,.28);border-bottom:1px solid rgba(139,76,65,.18);text-align:left}
 .festival-dharma header{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:11px;color:#875047;font-size:9px;letter-spacing:.16em}
 .festival-dharma header i{width:5px;height:5px;border-radius:50%;background:#994e43}
@@ -378,7 +378,7 @@ button { color:inherit; }
 .festival-info .solar-noon-strip{text-align:left}
 .year-festivals { margin:42px 0 20px;padding-top:26px;border-top:1px solid #d7ccb7; }.year-festivals>header{display:flex;align-items:center;gap:9px;margin-bottom:25px;font-size:14px;letter-spacing:.12em}.year-festivals>header i{width:3px;height:15px;background:#8b4b40}.year-festivals>header span{margin-left:auto;color:#9c927f;font-size:8px;letter-spacing:.08em}
 .festival-month { display:grid;grid-template-columns:38px 1fr;padding:14px 0;border-top:1px solid rgba(215,204,183,.7); }.festival-month>b{padding-top:9px;color:#9a8157;font-family:var(--font-body);font-size:18px;font-weight:400}.festival-month>div>button{width:100%;display:grid;grid-template-columns:37px 1fr 12px;align-items:center;padding:8px 0;border:0;border-bottom:1px solid rgba(222,213,196,.55);background:transparent;color:#514b41;text-align:left;cursor:pointer}.festival-month time{color:#94764d;font-size:9px}.festival-month span{font-size:10px;letter-spacing:.04em}.festival-month small{display:block;margin-top:4px;color:#9e9587;font-size:7px}.festival-month em{color:#ac9a78;font-size:15px;font-style:normal}
-@media(max-width:370px){.festival-poster{height:790px}.festival-copy h1{font-size:23px}.festival-copy{left:24px;right:23px}}
+@media(max-width:370px){.festival-poster{height:790px}.festival-copy h1{font-size:25px}.festival-copy{left:24px;right:23px}}
 
 /* 核验分层与东林法务 */
 .calendar-key{display:flex;justify-content:flex-end;align-items:center;gap:15px;margin:0 0 16px;color:#978e7e;font-size:7px;letter-spacing:.05em}.calendar-key>button{margin-right:auto;padding:0 0 3px;border:0;border-bottom:1px solid rgba(91,112,94,.35);background:transparent;color:#607263;font-size:8px;letter-spacing:.08em;cursor:pointer}.calendar-key span{display:flex;align-items:center;gap:5px}.calendar-key i{width:6px;height:6px;border-radius:50%;background:#b29358}.calendar-key i.dharma{background:#8c4d43}
