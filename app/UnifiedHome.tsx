@@ -15,6 +15,14 @@ const ordinaryVariants:OrdinaryVariant[]=[
   "guanyin-willow",
   "guanyin-nine-lotus",
   "guanyin-seated",
+  "guanyin-standing",
+  "guanyin-white-blue",
+  "guanyin-cheng",
+  "guanyin-thousand-arms",
+  "guanyin-four-arms",
+  "guanyin-white-scroll",
+  "guanyin-lotus-moon",
+  "guanyin-dragon",
   "amitabha-descending",
 ];
 const ordinaryVariant=(month:number,day:number)=>ordinaryVariants[Math.floor((Date.UTC(2026,month-1,day)-Date.UTC(2026,0,1))/86400000)%ordinaryVariants.length];

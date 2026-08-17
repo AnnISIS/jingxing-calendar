@@ -1,7 +1,7 @@
 import {DailyInfo} from "../DailyInfo";
 import {getTraditionalTime} from "../data/traditional-time";
 
-export type OrdinaryVariant = "amitabha" | "mountain" | "lotus" | "moon" | "guanyin-gold" | "guanyin-watermoon" | "guanyin-willow" | "guanyin-nine-lotus" | "guanyin-seated" | "amitabha-descending";
+export type OrdinaryVariant = "amitabha" | "mountain" | "lotus" | "moon" | "guanyin-gold" | "guanyin-watermoon" | "guanyin-willow" | "guanyin-nine-lotus" | "guanyin-seated" | "guanyin-standing" | "guanyin-white-blue" | "guanyin-cheng" | "guanyin-thousand-arms" | "guanyin-four-arms" | "guanyin-white-scroll" | "guanyin-lotus-moon" | "guanyin-dragon" | "amitabha-descending";
 
 const CalendarIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3M18 3v3M4.5 8.5h15M5.5 5h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
@@ -24,6 +24,14 @@ export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, wee
     "guanyin-willow": {caption:"杨枝洒净，愿海清凉",image:"/ordinary-guanyin-willow.webp",alt:"杨柳净瓶观世音菩萨立像"},
     "guanyin-nine-lotus": {caption:"莲开九品，慈航普度",image:"/ordinary-guanyin-nine-lotus.webp",alt:"明代九莲观世音菩萨像"},
     "guanyin-seated": {caption:"慈容寂静，照见清凉",image:"/ordinary-guanyin-seated.webp",alt:"宋元观世音菩萨坐像"},
+    "guanyin-standing": {caption:"杨枝遍洒，愿海澄清",image:"/ordinary-guanyin-standing.webp",alt:"杨柳观世音菩萨立像"},
+    "guanyin-white-blue": {caption:"慈光澄澈，清净自在",image:"/ordinary-guanyin-white-blue.webp",alt:"白衣观世音菩萨立像"},
+    "guanyin-cheng": {caption:"观自在心，听潮无声",image:"/ordinary-guanyin-cheng.webp",alt:"程宗元观世音菩萨坐像"},
+    "guanyin-thousand-arms": {caption:"千处祈求，千处应现",image:"/ordinary-guanyin-thousand-arms.webp",alt:"千手千眼观世音菩萨唐卡"},
+    "guanyin-four-arms": {caption:"慈悲喜舍，念念清明",image:"/ordinary-guanyin-four-arms.webp",alt:"四臂观世音菩萨唐卡"},
+    "guanyin-white-scroll": {caption:"白衣映月，慈航静远",image:"/ordinary-guanyin-white-scroll.webp",alt:"白衣观世音菩萨长卷"},
+    "guanyin-lotus-moon": {caption:"莲心无染，月印千江",image:"/ordinary-guanyin-lotus-moon.webp",alt:"莲月白衣观世音菩萨像"},
+    "guanyin-dragon": {caption:"乘愿渡海，慈护群生",image:"/ordinary-guanyin-dragon.webp",alt:"乘龙白衣观世音菩萨像"},
     "amitabha-descending": {caption:"光明遍照，摄取不舍",image:"/ordinary-amitabha-descending.webp",alt:"南宋阿弥陀佛接引图"},
   }[variant];
 
