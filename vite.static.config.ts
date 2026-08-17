@@ -13,7 +13,7 @@ export default defineConfig({
         if(!id.includes("/app/")) return null;
         return code
           .replaceAll('"/festivals/','"./festivals/')
-          .replaceAll('"/amitabha-companion.jpg"','"./amitabha-companion.jpg"')
+          .replaceAll('"/ordinary-','"./ordinary-')
           .replaceAll('"/summer-mountain.jpg"','"./summer-mountain.jpg"')
           .replaceAll('"/moon-mountain.jpg"','"./moon-mountain.jpg"')
           .replaceAll('"/guanyin-memorial.jpg"','"./guanyin-memorial.jpg"');

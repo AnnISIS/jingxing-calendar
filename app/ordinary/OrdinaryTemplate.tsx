@@ -1,7 +1,7 @@
 import {DailyInfo} from "../DailyInfo";
 import {getTraditionalTime} from "../data/traditional-time";
 
-export type OrdinaryVariant = "amitabha" | "mountain" | "lotus" | "moon" | "guanyin-gold" | "guanyin-watermoon" | "guanyin-willow";
+export type OrdinaryVariant = "amitabha" | "mountain" | "lotus" | "moon" | "guanyin-gold" | "guanyin-watermoon" | "guanyin-willow" | "guanyin-nine-lotus" | "guanyin-seated" | "amitabha-descending";
 
 const CalendarIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3M18 3v3M4.5 8.5h15M5.5 5h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
@@ -15,13 +15,16 @@ const variants = [
 export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, weekday="星期六", lunarLabel="七月初三", onOpenCalendar, onSelectDate }: { variant: OrdinaryVariant; embedded?: boolean; month?:number; day?: number; weekday?: string; lunarLabel?: string; onOpenCalendar?:()=>void; onSelectDate?:(month:number,day:number)=>void }) {
   const traditional=getTraditionalTime(2026,month,day);
   const meta = {
-    amitabha: { caption:"时序清宁，常随佛行", image:"/amitabha-companion.jpg", alt:"西方三圣行云图" },
+    amitabha: { caption:"时序清宁，常随佛行", image:"/ordinary-amitabha.webp", alt:"西方三圣行云图" },
     mountain: { caption:"白云生远岫，清露满空山", image:"/summer-mountain.jpg", alt:"夏季山居图" },
     lotus: { caption:"风过莲池，香远益清", image:"", alt:"莲池清晓" },
     moon: { caption:"松间明月，照见本心", image:"/moon-mountain.jpg", alt:"秋山山水图" },
-    "guanyin-gold": {caption:"慈眼视众生，清风满人间",image:"/ordinary-guanyin-gold.jpg",alt:"白衣观世音菩萨立像"},
-    "guanyin-watermoon": {caption:"水月澄明，莲心自在",image:"/ordinary-guanyin-watermoon.png",alt:"水月观世音菩萨坐像"},
-    "guanyin-willow": {caption:"杨枝洒净，愿海清凉",image:"/ordinary-guanyin-willow.jpg",alt:"杨柳净瓶观世音菩萨立像"},
+    "guanyin-gold": {caption:"慈眼视众生，清风满人间",image:"/ordinary-guanyin-gold.webp",alt:"白衣观世音菩萨立像"},
+    "guanyin-watermoon": {caption:"水月澄明，莲心自在",image:"/ordinary-guanyin-watermoon.webp",alt:"水月观世音菩萨坐像"},
+    "guanyin-willow": {caption:"杨枝洒净，愿海清凉",image:"/ordinary-guanyin-willow.webp",alt:"杨柳净瓶观世音菩萨立像"},
+    "guanyin-nine-lotus": {caption:"莲开九品，慈航普度",image:"/ordinary-guanyin-nine-lotus.webp",alt:"明代九莲观世音菩萨像"},
+    "guanyin-seated": {caption:"慈容寂静，照见清凉",image:"/ordinary-guanyin-seated.webp",alt:"宋元观世音菩萨坐像"},
+    "amitabha-descending": {caption:"光明遍照，摄取不舍",image:"/ordinary-amitabha-descending.webp",alt:"南宋阿弥陀佛接引图"},
   }[variant];
 
   return (
@@ -33,7 +36,7 @@ export function OrdinaryTemplate({ variant, embedded=false, month=8, day=15, wee
         <div className="ordinary-veil" />
         <div className="paper-grain" />
         <div className="season-note"><i /><span>{traditional.hou}<small>{traditional.wuHou}</small></span></div>
-        {variant === "amitabha" && <div className="companion-seal">常随弥陀</div>}
+        {(variant === "amitabha" || variant === "amitabha-descending") && <div className="companion-seal">常随弥陀</div>}
 
         <div className="ordinary-date">
           <p>二〇二六年{month}月</p><strong>{day}</strong>

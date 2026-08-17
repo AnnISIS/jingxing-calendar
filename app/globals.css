@@ -273,9 +273,12 @@ button { color:inherit; }
 .variant-mountain .ordinary-veil { background:linear-gradient(180deg,rgba(235,235,221,.74) 0%,rgba(223,229,216,.25) 39%,rgba(143,160,142,.2) 70%,rgba(67,84,70,.63) 100%); }
 .variant-mountain .ordinary-date { top:94px; }
 .variant-mountain .ordinary-date > strong { color:#3d493f; }
-.variant-guanyin-gold .ordinary-art-background,.variant-guanyin-watermoon .ordinary-art-background,.variant-guanyin-willow .ordinary-art-background{opacity:.68;object-position:50% 32%;filter:grayscale(.12) sepia(.11) saturate(.66) contrast(.9) brightness(1.03)}
-.variant-guanyin-gold .ordinary-veil,.variant-guanyin-watermoon .ordinary-veil,.variant-guanyin-willow .ordinary-veil{background:linear-gradient(180deg,rgba(244,239,225,.5),rgba(240,233,215,.06) 48%,rgba(82,91,75,.52) 100%)}
+.variant-guanyin-gold .ordinary-art-background,.variant-guanyin-watermoon .ordinary-art-background,.variant-guanyin-willow .ordinary-art-background,.variant-guanyin-nine-lotus .ordinary-art-background,.variant-guanyin-seated .ordinary-art-background{opacity:.68;object-position:50% 32%;filter:grayscale(.12) sepia(.11) saturate(.66) contrast(.9) brightness(1.03)}
+.variant-guanyin-gold .ordinary-veil,.variant-guanyin-watermoon .ordinary-veil,.variant-guanyin-willow .ordinary-veil,.variant-guanyin-nine-lotus .ordinary-veil,.variant-guanyin-seated .ordinary-veil{background:linear-gradient(180deg,rgba(244,239,225,.5),rgba(240,233,215,.06) 48%,rgba(82,91,75,.52) 100%)}
 .variant-guanyin-watermoon .ordinary-art-background{object-position:52% 42%;opacity:.72}.variant-guanyin-willow .ordinary-art-background{object-position:50% 28%}
+.variant-guanyin-nine-lotus .ordinary-art-background{object-position:50% 38%;opacity:.7}.variant-guanyin-seated .ordinary-art-background{object-position:50% 34%;opacity:.72}
+.variant-amitabha-descending .ordinary-art-background{object-position:50% 28%;opacity:.7;filter:grayscale(.1) sepia(.12) saturate(.7) contrast(.9) brightness(1.03)}
+.variant-amitabha-descending .ordinary-veil{background:linear-gradient(180deg,rgba(246,239,221,.45),rgba(240,230,206,.04) 47%,rgba(80,88,72,.55) 100%)}
 
 .variant-moon .ordinary-poster { background:#3e4c56; }
 .variant-moon .ordinary-art-background { opacity:.59; filter:grayscale(.48) sepia(.05) saturate(.62) contrast(.95) brightness(.72); }
