@@ -410,78 +410,78 @@ button { color:inherit; }
 /* 全站手机易读比例：正文不再退化为装饰性小字 */
 .topbar{font-size:13px}
 .ghost-button{font-size:12px}
-.solar-term{font-size:13px}
-.buddhist-year{font-size:13px}
-.scroll-cue{font-size:11px}
-.section-heading p{font-size:12px}
-.quiet-tag{font-size:12px}
-.eyebrow{font-size:11px}
-.description,.notice-card time{font-size:12px;line-height:1.6}
-.section-title button{font-size:12px}
-.date-chip span,.review-badge{font-size:11px}
-.details-card summary small,.details-grid span{font-size:11px}
-.details-grid p{font-size:13px;line-height:1.6}
+.solar-term{font-size:12px}
+.buddhist-year{font-size:12px}
+.scroll-cue{font-size:10px}
+.section-heading p{font-size:11px}
+.quiet-tag{font-size:11px}
+.eyebrow{font-size:10px}
+.description,.notice-card time{font-size:11px;line-height:1.6}
+.section-title button{font-size:11px}
+.date-chip span,.review-badge{font-size:10px}
+.details-card summary small,.details-grid span{font-size:10px}
+.details-grid p{font-size:12px;line-height:1.6}
 .source-note{font-size:10px;line-height:1.7}
 
 /* 佛菩萨纪念日海报与详情 */
-.memorial-kicker{font-size:12px}
-.memorial-title p{font-size:12px}
-.memorial-title .memorial-lunar{font-size:14px}
-.vertical-seal{font-size:11px}
-.memorial-date strong{font-size:15px}
-.memorial-date span{font-size:12px}
-.art-credit{font-size:9px}
-.memorial-detail-card button{font-size:11px}
-.name-card>span{font-size:11px}
-.name-card p{font-size:16px}
-.name-card small{font-size:11px;line-height:1.5}
+.memorial-kicker{font-size:11px}
+.memorial-title p{font-size:11px}
+.memorial-title .memorial-lunar{font-size:13px}
+.vertical-seal{font-size:10px}
+.memorial-date strong{font-size:14px}
+.memorial-date span{font-size:11px}
+.art-credit{font-size:8px}
+.memorial-detail-card button{font-size:10px}
+.name-card>span{font-size:10px}
+.name-card p{font-size:15px}
+.name-card small{font-size:10px;line-height:1.5}
 
 /* 月历日期详情与资料区 */
-.selected-day time span{font-size:11px}
-.selected-day div span{font-size:11px;line-height:1.5}
-.month-notes button span{font-size:12px}
-.month-notes button b{font-size:10px}
+.selected-day time span{font-size:10px}
+.selected-day div span{font-size:10px;line-height:1.5}
+.month-notes button span{font-size:11px}
+.month-notes button b{font-size:9px}
 .calendar-legend{font-size:10px}
-.sacred-brief>p{font-size:13px;line-height:1.9}
-.brief-actions summary{font-size:12px}
-.brief-actions details div{font-size:12px;line-height:1.8}
-.dharma-section header a{font-size:11px}
-.timeline-event time span,.timeline-event div span{font-size:11px}
+.sacred-brief>p{font-size:12px;line-height:1.9}
+.brief-actions summary{font-size:11px}
+.brief-actions details div{font-size:11px;line-height:1.8}
+.dharma-section header a{font-size:10px}
+.timeline-event time span,.timeline-event div span{font-size:10px}
 .event-caveat{font-size:10px;line-height:1.6}
-.next-observance>span{font-size:11px}
-.next-observance p{font-size:14px}
-.next-observance p span,.next-observance p small{font-size:11px}
-.next-observance .inline-calendar{font-size:11px}
+.next-observance>span{font-size:10px}
+.next-observance p{font-size:13px}
+.next-observance p span,.next-observance p small{font-size:10px}
+.next-observance .inline-calendar{font-size:10px}
 
 /* 普通日海报和入口 */
-.companion-seal{font-size:10px}
+.companion-seal{font-size:9px}
 .template-link{font-size:10px}
-.variant-picker>p,.variant-picker a{font-size:11px}
-.editorial-title p{font-size:12px}
-.editorial-title span{font-size:11px}
-.text-button{font-size:11px}
-.day-poster-button{font-size:10px}
+.variant-picker>p,.variant-picker a{font-size:10px}
+.editorial-title p{font-size:11px}
+.editorial-title span{font-size:10px}
+.text-button{font-size:10px}
+.day-poster-button{font-size:9px}
 
 /* 圣日海报、法务与全年资料 */
-.festival-kicker{font-size:11px}
-.festival-copy p{font-size:13px}
-.festival-copy div{font-size:11px}
-.festival-info>span{font-size:11px}
-.festival-info p{font-size:13px;line-height:1.7}
-.festival-info button{font-size:11px}
-.festival-dharma header{font-size:11px}
-.festival-dharma strong{font-size:13px}
-.festival-dharma small,.festival-dharma em{font-size:10px}
-.solar-noon-strip>span{font-size:11px}
-.solar-noon-strip small{font-size:10px}
-.year-festivals>header span{font-size:10px}
-.festival-month time{font-size:11px}
-.festival-month span{font-size:12px}
-.festival-month small{font-size:10px;line-height:1.5}
+.festival-kicker{font-size:10px}
+.festival-copy p{font-size:12px}
+.festival-copy div{font-size:10px}
+.festival-info>span{font-size:10px}
+.festival-info p{font-size:12px;line-height:1.7}
+.festival-info button{font-size:10px}
+.festival-dharma header{font-size:10px}
+.festival-dharma strong{font-size:12px}
+.festival-dharma small,.festival-dharma em{font-size:9px}
+.solar-noon-strip>span{font-size:10px}
+.solar-noon-strip small{font-size:9px}
+.year-festivals>header span{font-size:9px}
+.festival-month time{font-size:10px}
+.festival-month span{font-size:11px}
+.festival-month small{font-size:9px;line-height:1.5}
 .donglin-dharma>header span{font-size:10px}
-.donglin-dharma>p{font-size:11px}
-.donglin-dharma time{font-size:11px}
-.donglin-dharma .dharma-record>span{font-size:12px}
-.donglin-dharma small{font-size:10px}
-.calendar-archives summary>span{font-size:13px}
-.calendar-archives summary b,.calendar-archives summary em,.calendar-archives details[open] summary em::after{font-size:10px}
+.donglin-dharma>p{font-size:10px}
+.donglin-dharma time{font-size:10px}
+.donglin-dharma .dharma-record>span{font-size:11px}
+.donglin-dharma small{font-size:9px}
+.calendar-archives summary>span{font-size:12px}
+.calendar-archives summary b,.calendar-archives summary em,.calendar-archives details[open] summary em::after{font-size:9px}
