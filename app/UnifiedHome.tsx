@@ -51,6 +51,7 @@ export default function UnifiedHome({initialMode="today"}:{initialMode?:ViewMode
       setDate(readDate());
       window.scrollTo({top:0,left:0,behavior:"auto"});
     };
+    syncFromHistory();
     window.addEventListener("popstate",syncFromHistory);
     return()=>window.removeEventListener("popstate",syncFromHistory);
   },[initialMode]);
