@@ -1,23 +1,6 @@
 @import "tailwindcss";
-@import "./lxgwwenkai.css";
 
-@font-face {
-  font-family:"DongFang DaKai";
-  src:url("./fonts/dongfang-dakai.woff2") format("woff2");
-  font-style:normal;
-  font-weight:400;
-  font-display:swap;
-}
-
-@font-face {
-  font-family:"Quan Ziku ZhengKai";
-  src:url("./fonts/quan-ziku-zhengkai.woff2") format("woff2");
-  font-style:normal;
-  font-weight:400;
-  font-display:swap;
-}
-
-:root { --paper:#f5f1e7; --ink:#3c3a33; --muted:#817d70; --pine:#526456; --gold:#a5854c; --cinnabar:#8a473d; --font-title:"Quan Ziku ZhengKai","LXGW WenKai",serif; --font-body:"LXGW WenKai",serif; }
+:root { --paper:#f5f1e7; --ink:#3c3a33; --muted:#817d70; --pine:#526456; --gold:#a5854c; --cinnabar:#8a473d; --font-title:"Songti SC","STSong","Noto Serif CJK SC",serif; --font-body:"Songti SC","STSong","Noto Serif CJK SC",serif; --font-number:"Bodoni 72","Times New Roman",serif; }
 * { box-sizing:border-box; }
 html { background:#d8d5cc; scroll-behavior:smooth; }
 body { margin:0; color:var(--ink); background:linear-gradient(135deg,#d9d7cf,#eeece6); font-family:var(--font-body); }
@@ -37,7 +20,7 @@ button { color:inherit; }
 .year { margin:0; color:#7e7768; font-size:12px; letter-spacing:.22em; }
 .day-row { display:flex; align-items:center; justify-content:center; gap:12px; height:114px; }
 .month { writing-mode:vertical-rl; font-size:14px; letter-spacing:.25em; padding-top:2px; color:#676458; }
-.day-row strong { font-family:var(--font-body); font-size:106px; line-height:1; font-weight:400; letter-spacing:-.06em; color:#393a34; }
+.day-row strong { font-family:var(--font-number); font-size:106px; line-height:1; font-weight:400; letter-spacing:-.06em; color:#393a34; }
 .weekday { margin:-3px 0 10px; font-size:15px; letter-spacing:.45em; text-indent:.45em; }
 .lunar { display:inline-block; margin:0; border-top:1px solid rgba(165,133,76,.55); border-bottom:1px solid rgba(165,133,76,.55); padding:8px 15px 7px; font-size:14px; letter-spacing:.23em; }
 .buddhist-year { margin:10px 0 0; color:#7d7769; font-size:11px; letter-spacing:.16em; }
@@ -80,7 +63,7 @@ button { color:inherit; }
 .section-title button { border:0; background:transparent; color:#8b8069; font-size:10px; }
 .event-card { margin-top:0; }
 .date-chip { width:48px; height:56px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin-right:14px; border-right:1px solid #d8ceb8; color:var(--cinnabar); }
-.date-chip b { font-family:var(--font-body); font-size:24px; font-weight:400; line-height:1; }.date-chip span { margin-top:5px; font-size:9px; }
+.date-chip b { font-family:var(--font-number); font-size:24px; font-weight:400; line-height:1; }.date-chip span { margin-top:5px; font-size:9px; }
 .event-copy { min-width:0; }.review-badge { margin-left:auto; align-self:flex-start; color:#978d78; font-size:9px; background:#eee8db; padding:4px 7px; white-space:nowrap; }
 .details-card { margin-top:16px; border-top:1px solid #ddd4c0; border-bottom:1px solid #ddd4c0; }
 .details-card summary { list-style:none; padding:17px 3px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; }.details-card summary::-webkit-details-marker{display:none}
@@ -109,7 +92,7 @@ button { color:inherit; }
 .sacred-frame::after { content:""; position:absolute; inset:8px; box-shadow:inset 0 0 35px rgba(245,239,220,.68); pointer-events:none; }
 .frame-ornament { position:absolute; z-index:2; left:50%; transform:translateX(-50%); color:#a58751; background:#efe7d4; padding:0 8px; font-size:8px; }
 .frame-ornament.top { top:-5px; }.frame-ornament.bottom { bottom:-5px; }
-.cloud-pattern { position:absolute; z-index:3; color:rgba(164,132,77,.13); font-family:var(--font-body); font-size:95px; line-height:1; filter:blur(.3px); }
+.cloud-pattern { position:absolute; z-index:3; color:rgba(164,132,77,.13); font-family:var(--font-number); font-size:95px; line-height:1; filter:blur(.3px); }
 .cloud-left { left:-20px; bottom:118px; transform:scaleX(1.6); }.cloud-right { right:-25px; top:98px; transform:scaleX(1.45) rotate(180deg); }
 .memorial-date { position:absolute; z-index:8; left:32px; bottom:112px; display:flex; flex-direction:column; align-items:flex-start; color:#574d40; }
 .memorial-date strong { font-size:14px; font-weight:500; letter-spacing:.16em; }.memorial-date span { margin-top:5px; font-size:9px; letter-spacing:.13em; color:#827764; }.memorial-date i { width:23px; height:1px; margin-top:9px; background:#ae9569; }
@@ -171,7 +154,7 @@ button { color:inherit; }
 .week-row { display:grid; grid-template-columns:repeat(7,1fr); margin-bottom:7px; color:#918878; text-align:center; font-size:11px; }
 .calendar-grid { display:grid; grid-template-columns:repeat(7,1fr); border-top:1px solid #d8cfbd; border-left:1px solid #e2dacb; }
 .calendar-grid button { position:relative; height:62px; display:flex; flex-direction:column; align-items:center; justify-content:center; border:0; border-right:1px solid #e2dacb; border-bottom:1px solid #e2dacb; background:transparent; color:#4e493f; cursor:pointer; }
-.calendar-grid button strong { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; font-family:var(--font-body); font-size:17px; line-height:1; font-weight:400; }
+.calendar-grid button strong { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; font-family:var(--font-number); font-size:17px; line-height:1; font-weight:400; }
 .calendar-grid button small { margin-top:3px; color:#8f877a; font-size:9.5px; }
 .calendar-grid button.outside { color:#c8c1b4; opacity:.47; cursor:default; }
 .calendar-grid button.selected strong { background:#5c6d5d; color:#f8f3e8; }
@@ -180,11 +163,11 @@ button { color:inherit; }
 .calendar-legend { display:flex; justify-content:flex-end; gap:15px; padding:11px 2px 0; color:#8f877a; font-size:9px; }
 .calendar-legend span { display:flex; align-items:center; gap:5px; }.calendar-legend i { width:5px; height:5px; border-radius:50%; background:#ad8b4d; }.calendar-legend i.dharma { background:#8b4c41; }
 .selected-day { display:grid; grid-template-columns:60px 1fr 14px; align-items:center; min-height:84px; margin:28px 2px 0; padding:12px 2px; border-top:1px solid #c9bb9f; border-bottom:1px solid #dfd6c4; }
-.selected-day time { height:57px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-right:1px solid #d5c8ae; color:#657363; }.selected-day time strong { font-family:var(--font-body);font-size:27px;line-height:1;font-weight:400}.selected-day time span{margin-top:6px;font-size:8px}
+.selected-day time { height:57px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-right:1px solid #d5c8ae; color:#657363; }.selected-day time strong { font-family:var(--font-number);font-size:27px;line-height:1;font-weight:400}.selected-day time span{margin-top:6px;font-size:8px}
 .selected-day > div { padding-left:17px; }.selected-day p { margin:0 0 8px; font-size:14px; letter-spacing:.06em; }.selected-day div span { color:#91897c; font-size:8px; }.selected-day > b { color:#a89775; font-size:20px; font-weight:400; }
 .selected-day.has-event time { color:#9a7542; }
 .month-notes { margin:33px 2px 0; }.month-notes header { display:flex; align-items:center; gap:9px; margin-bottom:12px; font-size:13px; letter-spacing:.12em; }.month-notes header i { width:3px;height:14px;background:#8b4c41; }
-.month-notes button { width:100%; min-height:48px; display:grid; grid-template-columns:38px 1fr auto; align-items:center; border:0; border-bottom:1px solid #e1d9ca; background:transparent; color:#565047; text-align:left; cursor:pointer; }.month-notes button time { color:#9c8255; font-family:var(--font-body);font-size:15px}.month-notes button span{font-size:10px;letter-spacing:.04em}.month-notes button b{color:#9b9283;font-size:7px;font-weight:400}
+.month-notes button { width:100%; min-height:48px; display:grid; grid-template-columns:38px 1fr auto; align-items:center; border:0; border-bottom:1px solid #e1d9ca; background:transparent; color:#565047; text-align:left; cursor:pointer; }.month-notes button time { color:#9c8255; font-family:var(--font-number);font-size:15px}.month-notes button span{font-size:10px;letter-spacing:.04em}.month-notes button b{color:#9b9283;font-size:7px;font-weight:400}
 @media(max-width:370px){.calendar-sheet{padding-left:12px;padding-right:12px}.calendar-grid button{height:58px}.calendar-grid .mark{right:5px}.month-switch strong{font-size:34px}}
 
 /* 月历 V2：月白宣纸、无框日期、活动题签 */
@@ -240,7 +223,7 @@ button { color:inherit; }
 .timeline-event { display:grid; grid-template-columns:62px 1fr 12px; align-items:center; min-height:73px; }
 .daily-link{width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;cursor:pointer}
 .timeline-event time { height:58px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-right:1px solid #cbbd9f; color:#8e7045; }
-.timeline-event time strong { font-family:var(--font-body); font-size:25px; line-height:1; font-weight:400; }
+.timeline-event time strong { font-family:var(--font-number); font-size:25px; line-height:1; font-weight:400; }
 .timeline-event time span { margin-top:6px; font-size:9px; letter-spacing:.12em; }
 .timeline-event > div { padding-left:18px; }
 .timeline-event p { margin:0 0 8px; font-size:14px; letter-spacing:.08em; }
@@ -271,7 +254,7 @@ button { color:inherit; }
 .companion-seal { position:absolute; z-index:6; top:34px; right:27px; padding:6px 5px; border:1px solid rgba(127,66,55,.58); color:#864b41; font-size:8px; line-height:1.35; letter-spacing:.12em; writing-mode:vertical-rl; }
 .ordinary-date { position:absolute; z-index:6; top:102px; left:29px; color:#383a32; }
 .ordinary-date > p { margin:0; color:#675f51; font-size:13px; letter-spacing:.17em; }
-.ordinary-date > strong { display:block; margin:1px 0 3px -4px; font-family:var(--font-body); font-size:118px; line-height:1; font-weight:400; letter-spacing:-.07em; }
+.ordinary-date > strong { display:block; margin:1px 0 3px -4px; font-family:var(--font-number); font-size:118px; line-height:1; font-weight:400; letter-spacing:-.07em; }
 .ordinary-date > div { display:flex; flex-direction:row; align-items:center; gap:12px; font-size:12px; line-height:1.45; letter-spacing:.08em; white-space:nowrap; }
 .ordinary-date > div i { display:none; }
 .ordinary-footer { position:absolute; z-index:6; left:29px; right:28px; bottom:34px; display:flex; align-items:flex-end; justify-content:space-between; padding-top:15px; border-top:1px solid rgba(244,239,222,.48); color:#f0ecdf; text-shadow:0 1px 10px rgba(37,45,35,.18); }
@@ -374,10 +357,10 @@ button { color:inherit; }
 .festival-info .dharma-section{padding:22px 3px 25px;border-top:1px solid #d8cdb7}
 .festival-info .dharma-section button,.festival-info .next-observance button{margin-top:0;padding:0;border:0}
 .festival-info .next-observance{padding-top:27px}
-.solar-noon-strip{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;margin-top:25px;padding:20px 3px 2px;border-top:1px solid #d8cdb7;color:#756b5b}.solar-noon-strip>span{color:#9c8c70;font-size:9px;letter-spacing:.14em}.solar-noon-strip>div{display:flex;gap:19px}.solar-noon-strip p{display:flex;align-items:baseline;gap:7px;margin:0}.solar-noon-strip small{color:#918674;font-size:8px}.solar-noon-strip strong{font-family:var(--font-body);font-size:15px;font-weight:400;letter-spacing:.04em}
+.solar-noon-strip{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;margin-top:25px;padding:20px 3px 2px;border-top:1px solid #d8cdb7;color:#756b5b}.solar-noon-strip>span{color:#9c8c70;font-size:9px;letter-spacing:.14em}.solar-noon-strip>div{display:flex;gap:19px}.solar-noon-strip p{display:flex;align-items:baseline;gap:7px;margin:0}.solar-noon-strip small{color:#918674;font-size:8px}.solar-noon-strip strong{font-family:var(--font-number);font-size:15px;font-weight:400;letter-spacing:.04em}
 .festival-info .solar-noon-strip{text-align:left}
 .year-festivals { margin:42px 0 20px;padding-top:26px;border-top:1px solid #d7ccb7; }.year-festivals>header{display:flex;align-items:center;gap:9px;margin-bottom:25px;font-size:14px;letter-spacing:.12em}.year-festivals>header i{width:3px;height:15px;background:#8b4b40}.year-festivals>header span{margin-left:auto;color:#9c927f;font-size:8px;letter-spacing:.08em}
-.festival-month { display:grid;grid-template-columns:38px 1fr;padding:14px 0;border-top:1px solid rgba(215,204,183,.7); }.festival-month>b{padding-top:9px;color:#9a8157;font-family:var(--font-body);font-size:18px;font-weight:400}.festival-month>div>button{width:100%;display:grid;grid-template-columns:37px 1fr 12px;align-items:center;padding:8px 0;border:0;border-bottom:1px solid rgba(222,213,196,.55);background:transparent;color:#514b41;text-align:left;cursor:pointer}.festival-month time{color:#94764d;font-size:9px}.festival-month span{font-size:10px;letter-spacing:.04em}.festival-month small{display:block;margin-top:4px;color:#9e9587;font-size:7px}.festival-month em{color:#ac9a78;font-size:15px;font-style:normal}
+.festival-month { display:grid;grid-template-columns:38px 1fr;padding:14px 0;border-top:1px solid rgba(215,204,183,.7); }.festival-month>b{padding-top:9px;color:#9a8157;font-family:var(--font-number);font-size:18px;font-weight:400}.festival-month>div>button{width:100%;display:grid;grid-template-columns:37px 1fr 12px;align-items:center;padding:8px 0;border:0;border-bottom:1px solid rgba(222,213,196,.55);background:transparent;color:#514b41;text-align:left;cursor:pointer}.festival-month time{color:#94764d;font-size:9px}.festival-month span{font-size:10px;letter-spacing:.04em}.festival-month small{display:block;margin-top:4px;color:#9e9587;font-size:7px}.festival-month em{color:#ac9a78;font-size:15px;font-style:normal}
 @media(max-width:370px){.festival-poster{height:790px}.festival-copy h1{font-size:25px}.festival-copy{left:24px;right:23px}}
 
 /* 核验分层与东林法务 */
